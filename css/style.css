@@ -1,0 +1,54 @@
+html, body {
+  height: 100%;
+}
+
+html, body, h1, p {
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.info-wrapper {
+  position: relative;
+  height: 500px;
+  background-image: url("../images/info.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.info img {
+  display: block;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.info h1 {
+  padding-top: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.info p {
+  padding-top: 5px;
+  text-align: center;
+}
+
+.info span {
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.info i {
+  padding-left: 5px;
+}
