@@ -12,6 +12,7 @@ html, body, ul, h1, h2, p {
 section {
   position: relative;
   height: 500px;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -20,12 +21,11 @@ a {
 
 .info-wrapper {
   background-image: url("../images/info.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
-.info, .skills {
+.info, .skills, .contact {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -40,7 +40,7 @@ a {
   border-radius: 50%;
 }
 
-.info h1, .skills h1 {
+.info h1, .skills h1, .contact h1 {
   padding: 5px;
   font-size: 30px;
   text-align: center;
@@ -70,10 +70,9 @@ a {
 }
 
 .skills-wrapper {
-  background-image: url("../images/skills.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #364b70;
+  background-image: url("../images/skills.gif");
+  background-position: bottom;
 }
 
 .skills {
@@ -94,15 +93,6 @@ a {
 .skills li::before {
   font-family: "FontAwesome";
   content: "\f101";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  width: 1em;
-  padding-right: 10px;
 }
 
 .skills h2 {
@@ -112,4 +102,30 @@ a {
 .skills li {
   font-size: 20px;
   padding: 5px 0;
+}
+
+.contact-wrapper {
+  height: 300px;
+  background-image: url("../images/contact.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.contact form {
+  margin-top: 30px;
+}
+
+.contact input {
+  font-family: "FontAwesome", sans-serif;
+  width: 250px;
+  outline: none;
+  border: none;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.contact input[type="submit"] {
+  width: auto;
+  padding: 10px 20px;
+  margin: 0
 }
