@@ -41,9 +41,12 @@ a {
 }
 
 .info h1, .skills h1, .contact h1 {
-  padding: 5px;
   font-size: 30px;
   text-align: center;
+}
+
+.info h1 {
+  padding: 5px;
 }
 
 .info p {
@@ -79,6 +82,11 @@ a {
   width: 80%;
 }
 
+.skills h1, .contact h1 {
+  margin-bottom: 20px;
+}
+
+
 .skills ul {
   display: inline-block;
   vertical-align: top;
@@ -93,6 +101,7 @@ a {
 .skills li::before {
   font-family: "FontAwesome";
   content: "\f101";
+  padding-right: 10px;
 }
 
 .skills h2 {
@@ -105,27 +114,36 @@ a {
 }
 
 .contact-wrapper {
-  height: 300px;
-  background-image: url("../images/contact.png");
-  background-size: cover;
-  background-position: center;
+  height: 400px;
+  background-color: #368f89;
 }
 
-.contact form {
-  margin-top: 30px;
-}
-
-.contact input {
+.contact input, .contact textarea {
   font-family: "FontAwesome", sans-serif;
-  width: 250px;
   outline: none;
   border: none;
   padding: 10px;
+}
+
+.contact input {
+  width: 250px;
+}
+
+.contact input:nth-child(1) {
   margin-right: 10px;
 }
 
+.contact textarea {
+  display: block;
+  margin: 10px auto;
+  width: 534px;
+}
+
 .contact input[type="submit"] {
+  display: block;
+  color: inherit;
+  background-color: #364b70;
+  margin: auto;
   width: auto;
   padding: 10px 20px;
-  margin: 0
 }
