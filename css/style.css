@@ -155,6 +155,7 @@ a {
   margin: auto;
   width: auto;
   padding: 10px 20px;
+  cursor: pointer;
 }
 
 @media (max-width:900px) {
