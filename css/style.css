@@ -24,7 +24,7 @@ a {
   background-position: center;
 }
 
-.info, .skills, .contact {
+.info, .profile, .contact {
   padding: 50px 0;
 }
 
@@ -36,7 +36,7 @@ a {
   border-radius: 50%;
 }
 
-.info h1, .skills h1, .contact h1 {
+.info h1, .profile h1, .projects h1, .contact h1 {
   font-size: 30px;
   text-align: center;
 }
@@ -70,39 +70,39 @@ a {
           transform: rotate(360deg);
 }
 
-.skills-wrapper {
+.profile-wrapper {
   background-color: #364b70;
-  background-image: url("../images/skills.gif");
+  background-image: url("../images/profile.gif");
   background-position: bottom;
 }
 
-.skills h1, .contact h1 {
+.profile h1, .contact h1 {
   margin-bottom: 20px;
 }
 
-.skills ul {
+.profile ul {
   display: inline-block;
   vertical-align: top;
   list-style: none;
   margin-left: 10%;
 }
 
-.skills ul:nth-last-child(1) {
+.profile ul:nth-last-child(1) {
   position: absolute;
   right: 10%;
 }
 
-.skills li::before {
+.profile li::before {
   font-family: "FontAwesome";
   content: "\f101";
   padding-right: 10px;
 }
 
-.skills h2 {
-  padding: 10px 0;
+.profile h2 {
+  padding: 10px 20px;
 }
 
-.skills li {
+.profile li {
   font-size: 20px;
   padding: 5px 0;
 }
@@ -160,13 +160,13 @@ a {
 
 @media (max-width:900px) {
 
-  .skills ul {
+  .profile ul {
     display: block;
     width: 80%;
     margin: auto;
   }
 
-  .skills ul:nth-last-child(1) {
+  .profile ul:nth-last-child(1) {
     position: relative;
     margin-top: 30px;
     right: 0;
