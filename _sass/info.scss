@@ -1,0 +1,46 @@
+.info-wrapper {
+  background-image: url("../images/info.jpg");
+  background-size: cover;
+  background-position: center;
+
+  .info {
+    padding: 50px 0;
+  
+    img {
+      display: block;
+      margin: auto;
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+    }
+  
+    h1 {
+      padding: 5px;
+    }
+    
+    p {
+      font-size: 20px;
+      padding: 5px;
+      text-align: center;
+    }
+  
+    p:nth-last-child(1) {
+      font-size: 40px;
+    }
+    
+    span {
+      white-space: nowrap;
+    }
+  
+    i {
+      padding-left: 5px;
+      -webkit-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+    }
+  
+    a:hover i {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+}
