@@ -1,0 +1,47 @@
+.profile-wrapper {
+  background-color: #364b70;
+  background-image: url("../images/profile.gif");
+  background-size: contain;
+  background-position: center;
+
+  .profile {
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      display: inline-block;
+      list-style: none;
+      margin-left: 10%;
+    }
+    
+    ul:nth-last-child(1) {
+      position: absolute;
+      right: 10%;
+
+      @media (max-width: 900px) {
+        position: relative;
+        margin-top: 30px;
+        right: 0;
+      }
+    }
+  
+    li::before {
+      position: absolute;
+      left: -20px;
+      font-family: "FontAwesome";
+      content: "\f101";
+    }
+  
+    h2 {
+      margin-left: -20px;
+      padding-bottom: 5px;
+    }
+  
+    li {
+      position: relative;
+      font-size: 20px;
+      padding: 5px 0;
+    }
+  } 
+}

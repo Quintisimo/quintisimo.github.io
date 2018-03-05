@@ -1,74 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="images/title.jpg">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quintisimo</title>
-  </head>
-  <body>
-    <section class="info-wrapper">
-      <div class="info">
-        <img src="images/face.jpg" alt="face">
-        <h1>Quintus Cardozo</h1>
-        <p>
-          <span><i class="fa fa-code" aria-hidden="true"></i> Developer,</span>
-          <span><i class="fa fa-desktop" aria-hidden="true"></i> Designer,</span>
-          <span><i class="fa fa-gamepad" aria-hidden="true"></i> Gamer</span>
-        </p>
-        <p>
-          <a href="https://twitter.com/quintisimo"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-          <a href="https://github.com/quintisimo"><i class="fa fa-github" aria-hidden="true"></i></a>
-          <a href="https://codepen.io/Quintisimo/"><i class="fa fa-codepen" aria-hidden="true"></i></a>
-        </p>
-      </div>
-    </section>
-    <section class="profile-wrapper">
-      <div class="profile">
-        <h1>Profile</h1>
-        <ul>
-          <h2>My Skills</h2>
-          <li>Leadership</li>
-          <li>Can work in a team or individually</li>
-          <li>Bilingual: English and Hindi</li>
-          <li>Problem solving</li>
-          <li>Time management</li>
-          <li>Planning and organization</li>
-          <li>Ability to work under pressure</li>
-        </ul>
-        <ul>
-          <h2>Languages Learned</h2>
-          <li>HTML (Hypertext Markup Language)</li>
-          <li>CSS (Cascading Style Sheets)</li>
-          <li>JS (Javascript)</li>
-          <li>PHP (Hypertext Preprocessor)</li>
-          <li>MYSQL (My Structured Query Language)</li>
-          <li>C# (C Sharp)</li>
-          <li>PY (Python)</li>
-        </ul>
-      </div>
-    </section>
-    <section class="contact-wrapper">
-      <div class="contact">
-        <h1>Get in touch...</h1>
-        <form action="https://formspree.io/quintuscardozo@gmail.com" method="post">
-          <div class="name">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <i class="fa fa-user" aria-hidden="true"></i>
-          </div>
-          <div class="email">
-            <i class="fa fa-inbox" aria-hidden="true"></i>
-            <input type="email" name="email" placeholder="Email Address" required>
-          </div>
-          <div class="about">
-            <i class="fa fa-info-circle" aria-hidden="true"></i>            
-            <textarea name="about" rows="8" placeholder="Tell me about the project" required></textarea>
-          </div>
-          <input type="submit" value="&#xf1d8; Submit">
-        </form>
-      </div>
-    </section>
-  </body>
-</html>
+---
+layout: page
+---
+
+{% include info.html %}
+
+{% include profile.html %}
+
+{% include contact.html %}
