@@ -1,47 +1,38 @@
 .profile-wrapper {
   background-color: #364b70;
-  background-image: url("../images/profile.gif");
+  background-image: url('../images/profile.gif');
   background-size: contain;
   background-position: center;
 
   .profile {
-    h1 {
-      margin-bottom: 20px;
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
-    ul {
-      display: inline-block;
-      list-style: none;
-      margin-left: 10%;
-    }
-    
-    ul:nth-last-child(1) {
-      position: absolute;
-      right: 10%;
+    div {
+      justify-self: center;
+      width: 410px;
 
-      @media (max-width: 900px) {
+      ul {
+        list-style: none;
+      }
+
+      li::before {
+        margin-right: 10px;
+        font-family: 'FontAwesome';
+        content: '\f101';
+      }
+
+      h2 {
+        margin-top: 20px;
+        padding-bottom: 5px;
+      }
+
+      li {
+        white-space: nowrap;
         position: relative;
-        margin-top: 30px;
-        right: 0;
+        font-size: 20px;
+        padding: 5px 0;
       }
     }
-  
-    li::before {
-      position: absolute;
-      left: -20px;
-      font-family: "FontAwesome";
-      content: "\f101";
-    }
-  
-    h2 {
-      margin-left: -20px;
-      padding-bottom: 5px;
-    }
-  
-    li {
-      position: relative;
-      font-size: 20px;
-      padding: 5px 0;
-    }
-  } 
+  }
 }
