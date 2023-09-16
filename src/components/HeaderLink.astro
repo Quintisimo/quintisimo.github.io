@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a">;
+
+const { href, ...props } = Astro.props;
+
+const { pathname } = Astro.url;
+const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+---
+
+<a
+	href={href}
+	class:list={["underline-offset-4", "decoration-2", { underline: isActive }]}
+	{...props}
+>
+	<slot />
+</a>
