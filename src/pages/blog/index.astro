@@ -1,0 +1,29 @@
+---
+import FormattedDate from "../../components/FormattedDate.astro";
+import Page from "../../layouts/Page.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
+---
+
+<Page>
+	<section>
+		<ul class="grid gap-8">
+			{
+				posts.map((post) => (
+					<li class="ring-4 ring-black ring-offset-8 rounded">
+						<a href={`/blog/${post.slug}/`}>
+							<h2 class="title">{post.data.title}</h2>
+							<p>{post.data.description}</p>
+							<p class="date">
+								<FormattedDate date={post.data.pubDate} />
+							</p>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Page>
