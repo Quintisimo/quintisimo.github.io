@@ -1,20 +1,56 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import { type CollectionEntry, getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Page from "../../layouts/Page.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
+const { title, description, pubDate, heroImage } = post.data;
 const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+<Page title={title} description={description}>
+  <article>
+    <Image
+      src={heroImage}
+      alt="Hero Image"
+      height={400}
+      class="rounded-xl my-2 w-full h-sm object-cover"
+      transition:name={title}
+    />
+    <h1 class="text-4xl">{title}</h1>
+    <FormattedDate date={pubDate} />
+    <Content />
+  </article>
+</Page>
+
+<style is:global>
+  article pre {
+    @apply p-2 rounded my-4!;
+  }
+
+  article p {
+    @apply my-5;
+  }
+
+  article > :is(h2, h3) {
+    @apply underline underline-dotted underline-offset-4 decoration-2;
+  }
+
+  article h1 {
+    @apply text-3xl;
+  }
+
+  article h2 {
+    @apply text-xl;
+  }
+</style>
