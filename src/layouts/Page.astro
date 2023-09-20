@@ -4,6 +4,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { slide } from "astro:transitions";
 
 interface Props {
   title?: string;
@@ -23,9 +24,9 @@ const {
   <head>
     <BaseHead title={title} description={description} image={image} />
   </head>
-  <body class="container mx-auto">
+  <body class="container mx-auto font-mono @dark:bg-black @dark:text-white">
     <Header />
-    <main>
+    <main transition:animate={slide({ duration: "1" })}>
       <slot />
     </main>
     <Footer />

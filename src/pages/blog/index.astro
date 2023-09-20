@@ -1,29 +1,38 @@
 ---
+import { Image } from "astro:assets";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Page from "../../layouts/Page.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog")).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
 
 <Page>
-	<section>
-		<ul class="grid gap-8">
-			{
-				posts.map((post) => (
-					<li class="ring-4 ring-black ring-offset-8 rounded">
-						<a href={`/blog/${post.slug}/`}>
-							<h2 class="title">{post.data.title}</h2>
-							<p>{post.data.description}</p>
-							<p class="date">
-								<FormattedDate date={post.data.pubDate} />
-							</p>
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</section>
+  <section>
+    <ul class="grid gap-5">
+      {
+        posts.map((post) => (
+          <li class="ring-4 ring-black p-2 rounded @dark:ring-white">
+            <a href={`/blog/${post.slug}/`} class="flex gap-4">
+              <Image
+                src={post.data.heroImage}
+                alt="Hero Image"
+                height={100}
+                width={100}
+                class="rounded object-cover"
+                transition:name={post.data.title}
+              />
+              <div>
+                <h2 class="text-xl font-bold">{post.data.title}</h2>
+                <p>{post.data.description}</p>
+                <FormattedDate date={post.data.pubDate} />
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Page>
