@@ -1,7 +1,6 @@
 {
-  "name": "",
+  "name": "personal-website",
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,14 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.0",
-    "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.0",
-    "@iconify-json/jam": "^1.1.5",
-    "@iconify-json/material-symbols": "^1.1.58",
-    "@unocss/reset": "^0.56.0",
-    "@unocss/transformer-directives": "^0.56.0",
-    "astro": "^3.1.0",
-    "unocss": "^0.56.0"
+    "@astrojs/mdx": "3.0.1",
+    "@astrojs/rss": "4.0.6",
+    "@astrojs/sitemap": "3.1.5",
+    "@iconify-json/jam": "1.1.8",
+    "@iconify-json/material-symbols": "1.1.81",
+    "@unocss/reset": "0.60.4",
+    "@unocss/transformer-directives": "0.60.4",
+    "astro": "4.9.2",
+    "unocss": "0.60.4"
   }
 }
