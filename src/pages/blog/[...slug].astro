@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
+import Date from "../../components/date.astro";
 import Page from "../../layouts/Page.astro";
 import { Image } from "astro:assets";
 
@@ -11,6 +11,7 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
+
 type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
@@ -28,7 +29,7 @@ const { Content } = await post.render();
       transition:name={title}
     />
     <h1 class="text-4xl">{title}</h1>
-    <FormattedDate date={pubDate} />
+    <Date date={pubDate} />
     <Content />
   </article>
 </Page>
