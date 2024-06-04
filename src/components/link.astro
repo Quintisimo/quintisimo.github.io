@@ -10,9 +10,9 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <a
-	href={href}
-	class:list={["underline-offset-4", "decoration-2", { underline: isActive }]}
-	{...props}
+  href={href}
+  class:list={["underline-offset-4", "decoration-2", { underline: isActive }]}
+  {...props}
 >
-	<slot />
+  <slot />
 </a>
