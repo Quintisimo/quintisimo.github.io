@@ -17,19 +17,23 @@ import { SITE_TITLE } from "../consts";
   <script>
     import TypeIt from "typeit";
 
-    new TypeIt("#type", { speed: 50 })
-      .pause(300)
-      .delete(18)
-      .type("gamer.")
-      .pause(300)
-      .delete(6)
-      .type("manager.")
-      .pause(300)
-      .delete(8)
-      .type("leader.")
-      .pause(300)
-      .delete(7)
-      .type("developer. ")
-      .go();
+    document.addEventListener("astro:page-load", () => {
+      if (window.location.pathname === "/") {
+        new TypeIt("#type", { speed: 50 })
+          .pause(300)
+          .delete(18)
+          .type("gamer.")
+          .pause(300)
+          .delete(6)
+          .type("manager.")
+          .pause(300)
+          .delete(8)
+          .type("leader.")
+          .pause(300)
+          .delete(7)
+          .type("developer.")
+          .go();
+      }
+    });
   </script>
 </Page>
