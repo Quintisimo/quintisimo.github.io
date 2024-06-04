@@ -1,0 +1,14 @@
+---
+interface Props {
+  link?: string;
+  title: string;
+  icon: string;
+}
+
+const { link, title, icon } = Astro.props;
+---
+
+<a href={link} target="_blank">
+  <span class="sr-only">{title}</span>
+  <div class:list={["text-xl", icon]}></div>
+</a>
