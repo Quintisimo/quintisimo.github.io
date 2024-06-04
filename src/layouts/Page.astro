@@ -1,8 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Meta from "../components/meta.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { slide } from "astro:transitions";
 
@@ -22,7 +22,7 @@ const {
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={image} />
+    <Meta title={title} description={description} image={image} />
   </head>
   <body class="container mx-auto font-mono @dark:bg-black @dark:text-white">
     <Header />
