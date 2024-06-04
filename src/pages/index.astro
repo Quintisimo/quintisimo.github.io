@@ -1,39 +1,69 @@
 ---
 import Page from "../layouts/Page.astro";
 import { SITE_TITLE } from "../consts";
+import Face from "../assets/face.jpg";
+import { Image } from "astro:assets";
+import Heading from "../components/heading.astro";
+import hive from "../assets/hive.png";
+import littles from "../assets/littles.png";
+import unloan from "../assets/unloan.png";
+import legalTech from "../assets/legal-tech.png";
 ---
 
-<Page>
-  <section>
-    <div class="grid grid-rows-2 items-center">
+<Page class="grid gap-12">
+  <section class="flex py-4">
+    <div class="flex-1 grid grid-rows-2 items-center">
       <h2 class="text-9xl">Ohayo</h2>
       <p class="text-xl" id="type">
         My name is {SITE_TITLE} and I'm a software engineer.
       </p>
     </div>
-    <div></div>
+    <Image width={300} src={Face} alt="Face" class="rounded-full" />
   </section>
-
-  <script>
-    import TypeIt from "typeit";
-
-    document.addEventListener("astro:page-load", () => {
-      if (window.location.pathname === "/") {
-        new TypeIt("#type", { speed: 50 })
-          .pause(300)
-          .delete(18)
-          .type("gamer.")
-          .pause(300)
-          .delete(6)
-          .type("manager.")
-          .pause(300)
-          .delete(8)
-          .type("leader.")
-          .pause(300)
-          .delete(7)
-          .type("developer.")
-          .go();
+  <section>
+    <Heading>About Me</Heading>
+    <p>
+      I'm a software engineer with a passion for building things. I have a
+      background in computer science and have been working in the industry for
+      over 7 years. I have experience working with a variety of technologies
+      including JavaScript, TypeScript, React, Node.js, and a lot more.
+    </p>
+  </section>
+  <section>
+    <Heading>Experience</Heading>
+    <div class="grid grid-cols-4 justify-center items-center gap-10">
+      {
+        [legalTech, unloan, hive, littles].map((company) => (
+          <Image
+            src={company}
+            alt="Company"
+            class="rounded-3xl justify-self-center self-center"
+          />
+        ))
       }
-    });
-  </script>
+    </div>
+  </section>
 </Page>
+
+<script>
+  import TypeIt from "typeit";
+
+  document.addEventListener("astro:page-load", () => {
+    if (window.location.pathname === "/") {
+      new TypeIt("#type", { speed: 50 })
+        .pause(300)
+        .delete(18)
+        .type("gamer.")
+        .pause(300)
+        .delete(6)
+        .type("manager.")
+        .pause(300)
+        .delete(8)
+        .type("leader.")
+        .pause(300)
+        .delete(7)
+        .type("developer.")
+        .go();
+    }
+  });
+</script>
