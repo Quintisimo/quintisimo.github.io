@@ -1,22 +1,31 @@
 ---
+import Icon from "./Icon.astro";
+
 const today = new Date();
 ---
 
 <footer class="h-12 mt-4 flex justify-between items-center">
   <div class="flex gap-4 items-center">
-    <div class="i-material-symbols:copyright-outline-sharp text-xl"></div>
+    <Icon title="Copyright" icon="i-material-symbols:copyright-outline-sharp" />
     <span>
       {today.getFullYear()} Quintus Cardozo. All rights reserved.
     </span>
   </div>
-  <div class="flex gap-4">
-    <a href="https://www.linkedin.com/in/quintus-cardozo/" target="_blank">
-      <span class="sr-only">Follow Quintus on LinkedIn</span>
-      <div class="i-jam:linkedin-square text-xl"></div>
-    </a>
-    <a href="https://github.com/quintisimo" target="_blank">
-      <span class="sr-only">Go to Quintus's GitHub</span>
-      <div class="i-jam:github-square text-xl"></div>
-    </a>
+  <div class="flex gap-2">
+    <Icon
+      link="https://www.linkedin.com/in/quintus-cardozo/"
+      title="LinkedIn"
+      icon="i-jam:linkedin-square"
+    />
+    <Icon
+      link="https://twitter.com/quintisimo"
+      title="Twitter"
+      icon="i-jam:twitter-square"
+    />
+    <Icon
+      link="https://github.com/quintisimo"
+      title="GitHub"
+      icon="i-jam:github-square"
+    />
   </div>
 </footer>
