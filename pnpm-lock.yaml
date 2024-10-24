@@ -32,9 +32,6 @@ importers:
       astro:
         specifier: 4.16.7
         version: 4.16.7(rollup@4.24.0)(typescript@5.6.3)
-      typeit:
-        specifier: 8.8.6
-        version: 8.8.6
       unocss:
         specifier: 0.63.6
         version: 0.63.6(postcss@8.4.47)(rollup@4.24.0)(typescript@5.6.3)(vite@5.4.10)
@@ -769,9 +766,6 @@ packages:
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
-
-  '@types/web-animations-js@2.2.16':
-    resolution: {integrity: sha512-ATELeWMFwj8eQiH0KmvsCl1V2lu/qx/CjOBmv4ADSZS5u8r4reMyjCXtxG7khqyiwH3IOMNdrON/Ugn94OUcRA==}
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
@@ -2051,9 +2045,6 @@ packages:
     resolution: {integrity: sha512-yOGpmOAL7CkKe/91I5O3gPICmJNLJ1G4zFYVAsRHg7M64biSnPtRj0WNQt++bRkjYOqjWXrhnUw1utzmVErAdg==}
     engines: {node: '>=16'}
 
-  typeit@8.8.6:
-    resolution: {integrity: sha512-DOWI4Lg6GMkxMLqYHWuX+RNdYibGcnJiH9v8hjhlNK1/cKYzYLVTtSVRwDnjkA70nVOtQhIHItW5X4Vy13zBdQ==}
-
   typescript@5.6.3:
     resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
@@ -2897,8 +2888,6 @@ snapshots:
   '@types/unist@2.0.11': {}
 
   '@types/unist@3.0.3': {}
-
-  '@types/web-animations-js@2.2.16': {}
 
   '@ungap/structured-clone@1.2.0': {}
 
@@ -4787,10 +4776,6 @@ snapshots:
       fsevents: 2.3.3
 
   type-fest@4.26.1: {}
-
-  typeit@8.8.6:
-    dependencies:
-      '@types/web-animations-js': 2.2.16
 
   typescript@5.6.3: {}
 
