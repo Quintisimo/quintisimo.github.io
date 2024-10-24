@@ -9,16 +9,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "3.0.1",
-    "@astrojs/rss": "4.0.6",
-    "@astrojs/sitemap": "3.1.5",
-    "@iconify-json/jam": "1.1.8",
-    "@iconify-json/material-symbols": "1.1.81",
-    "@unocss/reset": "0.60.4",
-    "@unocss/transformer-directives": "0.60.4",
-    "astro": "4.9.2",
-    "typeit": "8.8.3",
-    "unocss": "0.60.4"
+    "@astrojs/mdx": "3.1.8",
+    "@astrojs/rss": "4.0.9",
+    "@astrojs/sitemap": "3.2.1",
+    "@iconify-json/jam": "1.2.1",
+    "@iconify-json/material-symbols": "1.2.5",
+    "@unocss/reset": "0.63.6",
+    "@unocss/transformer-directives": "0.63.6",
+    "astro": "4.16.7",
+    "typeit": "8.8.6",
+    "unocss": "0.63.6"
   },
   "packageManager": "pnpm@9.1.4+sha256.30a1801ac4e723779efed13a21f4c39f9eb6c9fbb4ced101bce06b422593d7c9"
 }
