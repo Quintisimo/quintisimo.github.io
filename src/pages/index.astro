@@ -10,11 +10,13 @@ import unloan from "../assets/unloan.png";
 import legalTech from "../assets/legal-tech.png";
 ---
 
-<Page class="grid gap-12">
-  <section class="flex py-4">
-    <div class="flex-1 grid grid-rows-2 items-center">
-      <h2 class="text-9xl">Ohayo</h2>
-      <p class="text-xl" id="type">
+<Page class="grid gap-12 container">
+  <section
+    class="flex flex-wrap flex-wrap-reverse gap-4 md:justify-between justify-center py-4"
+  >
+    <div class="grid grid-rows-2 items-center">
+      <div class="text-6xl md:text-9xl text-center md:text-left">Hello</div>
+      <p class="text-xl" id="description">
         My name is {SITE_TITLE} and I'm a software engineer.
       </p>
     </div>
@@ -44,26 +46,3 @@ import legalTech from "../assets/legal-tech.png";
     </div>
   </section>
 </Page>
-
-<script>
-  import TypeIt from "typeit";
-
-  document.addEventListener("astro:page-load", () => {
-    if (window.location.pathname === "/") {
-      new TypeIt("#type", { speed: 50 })
-        .pause(300)
-        .delete(18)
-        .type("gamer.")
-        .pause(300)
-        .delete(6)
-        .type("manager.")
-        .pause(300)
-        .delete(8)
-        .type("leader.")
-        .pause(300)
-        .delete(7)
-        .type("developer.")
-        .go();
-    }
-  });
-</script>
