@@ -18,11 +18,13 @@
     "@iconify-json/material-symbols": "1.2.5",
     "@unocss/reset": "0.63.6",
     "@unocss/transformer-directives": "0.63.6",
+    "animejs": "3.2.2",
     "astro": "4.16.7",
     "unocss": "0.63.6"
   },
   "packageManager": "pnpm@9.1.4+sha256.30a1801ac4e723779efed13a21f4c39f9eb6c9fbb4ced101bce06b422593d7c9",
   "devDependencies": {
-    "@biomejs/biome": "1.9.4"
+    "@biomejs/biome": "1.9.4",
+    "@types/animejs": "3.1.12"
   }
 }

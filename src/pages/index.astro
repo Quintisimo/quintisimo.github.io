@@ -5,17 +5,18 @@ import hive from "../assets/hive.png";
 import legalTech from "../assets/legal-tech.png";
 import littles from "../assets/littles.png";
 import unloan from "../assets/unloan.png";
-import Heading from "../components/heading.astro";
+import SectionHeading from "../components/section-heading.astro";
 import { SITE_TITLE } from "../consts";
 import Page from "../layouts/Page.astro";
+import PageHeading from "../components/page-heading.astro";
 ---
 
-<Page class="grid gap-12 container">
+<Page class="grid gap-12">
   <section
-    class="flex flex-wrap flex-wrap-reverse gap-4 md:justify-between justify-center py-4"
+    class="w-full flex flex-wrap flex-wrap-reverse gap-4 md:justify-between justify-center py-4"
   >
-    <div class="grid grid-rows-2 items-center">
-      <div class="text-6xl md:text-9xl text-center md:text-left">Hello</div>
+    <div class="flex-1 grid grid-rows-2 items-center">
+      <PageHeading texts={["Hello", "こんにちは", "नमस्ते"]} fallback="Hello" />
       <p class="text-xl" id="description">
         My name is {SITE_TITLE} and I'm a software engineer.
       </p>
@@ -23,16 +24,19 @@ import Page from "../layouts/Page.astro";
     <Image width={300} src={Face} alt="Face" class="rounded-full" />
   </section>
   <section>
-    <Heading>About Me</Heading>
-    <p>
-      I'm a software engineer with a passion for building things. I have a
-      background in computer science and have been working in the industry for
-      over 7 years. I have experience working with a variety of technologies
-      including JavaScript, TypeScript, React, Node.js, and a lot more.
-    </p>
+    <SectionHeading>About Me</SectionHeading>
+    <div class="grid gap-2">
+      <p>
+        I'm a software engineer with a passion for building things. I have a
+        background in computer science and have been working in the industry for
+        over 7 years. I have experience working with a variety of technologies
+        including JavaScript, TypeScript, React, Node.js, and a lot more.
+      </p>
+      <p>I am currently learning Japanese as hobby</p>
+    </div>
   </section>
   <section>
-    <Heading>Experience</Heading>
+    <SectionHeading>Experience</SectionHeading>
     <div class="grid grid-cols-4 justify-center items-center gap-10">
       {
         [legalTech, unloan, hive, littles].map((company) => (
