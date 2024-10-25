@@ -1,10 +1,10 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Meta from "../components/meta.astro";
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { slide } from "astro:transitions";
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro";
+import Meta from "../components/meta.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 interface Props {
   title?: string;
@@ -26,7 +26,7 @@ const {
   <head>
     <Meta title={title} description={description} image={image} />
   </head>
-  <body class="mx-auto font-mono @dark:bg-black @dark:text-white p-10">
+  <body class="mx-auto font-mono @dark:bg-black @dark:text-white px-10">
     <Header />
     <main transition:animate={slide({ duration: "1" })} class={className}>
       <slot />
