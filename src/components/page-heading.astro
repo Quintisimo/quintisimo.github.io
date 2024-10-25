@@ -1,0 +1,58 @@
+---
+interface Props {
+  texts: string[];
+  fallback: string;
+}
+
+const headingClasses = "text-6xl md:text-9xl text-center md:text-left";
+const { texts } = Astro.props;
+---
+
+<div id="anime" class:list={[headingClasses, "relative", "h-full"]}>
+  {
+    texts.map((text) => (
+      <span
+        id={text}
+        class="absolute inset-0 opacity-0 flex items-center justify-center md:justify-start"
+      >
+        <span>{text}</span>
+      </span>
+    ))
+  }
+</div>
+
+<noscript>
+  <style>
+    #anime {
+      display: none;
+    }
+  </style>
+  <h1 class={headingClasses}>Hello</h1>
+</noscript>
+
+<script>
+  import anime from "animejs/lib/anime.es";
+
+  document.addEventListener("astro:page-load", () => {
+    const animation = anime.timeline({ loop: true });
+
+    const container = document.querySelector("#anime")!;
+
+    for (const child of container.children) {
+      animation
+        .add({
+          targets: child,
+          opacity: [0, 1],
+          easing: "linear",
+          duration: 1000,
+        })
+        .add({
+          targets: child,
+          opacity: 0,
+          easing: "linear",
+          duration: 1000,
+          delay: 1000,
+        });
+    }
+  });
+</script>

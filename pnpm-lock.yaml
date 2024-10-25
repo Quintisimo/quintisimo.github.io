@@ -29,6 +29,9 @@ importers:
       '@unocss/transformer-directives':
         specifier: 0.63.6
         version: 0.63.6
+      animejs:
+        specifier: 3.2.2
+        version: 3.2.2
       astro:
         specifier: 4.16.7
         version: 4.16.7(rollup@4.24.0)(typescript@5.6.3)
@@ -39,6 +42,9 @@ importers:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
+      '@types/animejs':
+        specifier: 3.1.12
+        version: 3.1.12
 
 packages:
 
@@ -773,6 +779,9 @@ packages:
   '@types/acorn@4.0.6':
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
 
+  '@types/animejs@3.1.12':
+    resolution: {integrity: sha512-fpdH+ZtlO0kqjTOqRaBdsEmvpRNOayI8k4EVkEtitL5l6wducDOXk0rgQgfZqWf/ZX9DzXrHf257S5i9xTcISQ==}
+
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
 
@@ -945,6 +954,9 @@ packages:
     resolution: {integrity: sha512-8zSiw54Oxrdym50NlZ9sUusyO1Z1ZchgRLWRaK6c86XJFClyCgFKetdowBg5bKxyp/u+CDBJG4Mpp0m3HLZl9w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  animejs@3.2.2:
+    resolution: {integrity: sha512-Ao95qWLpDPXXM+WrmwcKbl6uNlC5tjnowlaRYtuVDHHoygjtIPfDUoK9NthrlZsQSKjZXlmji2TrBUAVbiH0LQ==}
 
   ansi-align@3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
@@ -2922,6 +2934,8 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.6
 
+  '@types/animejs@3.1.12': {}
+
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.25.9
@@ -3193,6 +3207,8 @@ snapshots:
       acorn: 8.13.0
 
   acorn@8.13.0: {}
+
+  animejs@3.2.2: {}
 
   ansi-align@3.0.1:
     dependencies:
