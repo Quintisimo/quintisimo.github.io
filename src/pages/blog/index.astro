@@ -10,31 +10,29 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Page>
-  <section>
-    <ul class="grid gap-5">
-      {
-        posts.map((post) => (
-          <li class="group">
-            <a href={`/blog/${post.slug}/`} class="flex gap-4">
-              <Image
-                src={post.data.heroImage}
-                alt="Hero Image"
-                height={100}
-                width={100}
-                class="rounded object-cover"
-                transition:name={post.data.title}
-              />
-              <div>
-                <h2 class="text-xl font-bold group-hover:underline underline-offset-4 decoration-2">
-                  {post.data.title}
-                </h2>
-                <p>{post.data.description}</p>
-                <DisplayDate date={post.data.pubDate} />
-              </div>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+  <ul class="grid gap-5">
+    {
+      posts.map((post) => (
+        <li class="group">
+          <a href={`/blog/${post.slug}/`} class="flex gap-4">
+            <Image
+              src={post.data.heroImage}
+              alt="Hero Image"
+              height={100}
+              width={100}
+              class="rounded object-cover"
+              transition:name={post.data.title}
+            />
+            <div>
+              <h2 class="text-xl font-bold group-hover:underline underline-offset-4 decoration-2">
+                {post.data.title}
+              </h2>
+              <p>{post.data.description}</p>
+              <DisplayDate date={post.data.pubDate} />
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </Page>

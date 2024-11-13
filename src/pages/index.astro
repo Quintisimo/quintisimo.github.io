@@ -1,19 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import Face from "../assets/face.jpg";
-import hive from "../assets/hive.png";
-import legalTech from "../assets/legal-tech.png";
-import littles from "../assets/littles.png";
-import unloan from "../assets/unloan.png";
 import SectionHeading from "../components/section-heading.astro";
 import { SITE_TITLE } from "../consts";
 import Page from "../layouts/Page.astro";
 import PageHeading from "../components/page-heading.astro";
 ---
 
-<Page class="grid gap-12">
+<Page class="grid items-center">
   <section
-    class="w-full flex flex-wrap flex-wrap-reverse gap-4 md:justify-between justify-center py-4"
+    class="flex flex-wrap flex-wrap-reverse gap-4 md:justify-between justify-center py-4"
   >
     <div class="flex-1 grid grid-rows-2 items-center">
       <PageHeading texts={["Hello", "こんにちは", "नमस्ते"]} fallback="Hello" />
@@ -21,7 +17,13 @@ import PageHeading from "../components/page-heading.astro";
         My name is {SITE_TITLE} and I'm a software engineer.
       </p>
     </div>
-    <Image width={300} src={Face} alt="Face" class="rounded-full" />
+    <Image
+      width={300}
+      src={Face}
+      alt="Face"
+      class="rounded-full"
+      loading="eager"
+    />
   </section>
   <section>
     <SectionHeading>About Me</SectionHeading>
@@ -33,20 +35,6 @@ import PageHeading from "../components/page-heading.astro";
         including JavaScript, TypeScript, React, Node.js, and a lot more.
       </p>
       <p>I am currently learning Japanese as hobby</p>
-    </div>
-  </section>
-  <section>
-    <SectionHeading>Experience</SectionHeading>
-    <div class="grid grid-cols-4 justify-center items-center gap-10">
-      {
-        [legalTech, unloan, hive, littles].map((company) => (
-          <Image
-            src={company}
-            alt="Company"
-            class="rounded-3xl justify-self-center self-center"
-          />
-        ))
-      }
     </div>
   </section>
 </Page>
