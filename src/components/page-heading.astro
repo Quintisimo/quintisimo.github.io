@@ -36,7 +36,8 @@ const { texts } = Astro.props;
   document.addEventListener("astro:page-load", () => {
     const animation = anime.timeline({ loop: true });
 
-    const container = document.querySelector("#anime")!;
+    const container = document.querySelector("#anime");
+    if (!container) return;
 
     for (const child of container.children) {
       animation

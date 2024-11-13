@@ -26,7 +26,9 @@ const {
   <head>
     <Meta title={title} description={description} image={image} />
   </head>
-  <body class="mx-auto font-mono @dark:bg-black @dark:text-white px-10">
+  <body
+    class="h-screen w-screen grid grid-rows-[5rem_1fr_5rem] font-mono @dark:bg-black @dark:text-white px-10"
+  >
     <Header />
     <main transition:animate={slide({ duration: "1" })} class={className}>
       <slot />
