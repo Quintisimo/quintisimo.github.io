@@ -18,6 +18,7 @@ const blog = defineCollection({
       // Transform string to Date object
       pubDate: z.coerce.date(),
       heroImage: image(),
+      repo: z.string(),
     }),
 });
 

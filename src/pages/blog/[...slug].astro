@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
-const { title, description, pubDate, heroImage } = post.data;
+const { title, description, pubDate, heroImage, repo } = post.data;
 const { Content } = await post.render();
 ---
 
@@ -31,8 +31,21 @@ const { Content } = await post.render();
     <h1 class="text-4xl">{title}</h1>
     <DisplayDate date={pubDate} />
     <Content />
+    <p>
+      The project can be found on GitHub. Feel free to play around with it.
+    </p>
+    <div class="repo-card" data-repo={repo}></div>
   </article>
 </Page>
+
+<script is:inline src="https://tarptaeya.github.io/repo-card/repo-card.js"></script>
+<script>
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const repo = document.querySelector(".repo-card");
+  if (prefersDarkScheme && repo) {
+    repo.setAttribute("data-theme", "dark-theme");
+  }
+</script>
 
 <style is:global>
   article pre {
