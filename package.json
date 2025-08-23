@@ -8,9 +8,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "biome check .",
-    "format": "prettier --check .",
+    "postlint": "prettier --check .",
     "lint:fix": "biome check --write --unsafe .",
-    "format:fix": "prettier --write ."
+    "postlint:fix": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/rss": "4.0.12",

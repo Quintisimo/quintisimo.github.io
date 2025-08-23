@@ -104,7 +104,7 @@ const { repo } = Astro.props;
   document.addEventListener("astro:page-load", async () => {
     const emojis = await get("https://api.github.com/emojis");
     const colors = await get(
-      "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json"
+      "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json",
     );
     const data = await get(`https://api.github.com/repos/${repo}`);
 
@@ -113,7 +113,7 @@ const { repo } = Astro.props;
     name.href = data.html_url;
 
     const forkedFromWrapper = document.querySelector(
-      "#repo-card-forked-from-wrapper"
+      "#repo-card-forked-from-wrapper",
     );
     forkedFromWrapper.style.display = data.fork ? "flex" : "none";
 
@@ -133,11 +133,11 @@ const { repo } = Astro.props;
         }
 
         return match;
-      }
+      },
     );
 
     const languageWrapper = document.querySelector(
-      "#repo-card-language-wrapper"
+      "#repo-card-language-wrapper",
     );
     languageWrapper.style.display = data.language ? "" : "none";
 
