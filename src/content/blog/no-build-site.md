@@ -1,8 +1,9 @@
 ---
-title: "No Build Site"
-description: "Writing new websites the old fashion way"
-pubDate: "Oct 24 2020"
-heroImage: "./assets/no-build-site.jpg"
+title: No Build Site
+description: Writing new websites the old fashion way
+pubDate: Oct 24 2020
+heroImage: ./assets/no-build-site.jpg
+repo: quintisimo/no-build
 ---
 
 I needed to build a new react site so I fired up [creat-react-app](https://github.com/facebook/create-react-app) in my terminal. While I was waiting for all those node modules to install, I started reminiscing about the old days where you didn't need fancy jsx and 1000 line bundle.js file just to build a Hello World site. Now don't get me wrong I love the ease of use of npm and all the luxuries it provides. The main thing that annoys me is waiting for the project to rebuild after every change. Now I have heard about [snowpack](https://github.com/snowpackjs/snowpack) and how it improves on other bundlers, but I started to wonder if it is possible to write a full stack NodeJS and React application without a build step. This is what I came up with.
@@ -148,7 +149,7 @@ if (process.env.NODE_ENV !== "production") {
       if (socket !== null) socket.emit("reload");
     });
   });
-}
+}`
 ```
 
 ### Client
@@ -162,8 +163,3 @@ if (process.env.NODE_ENV !== "production") {
 ```
 
 So during development the server watches the client folder and if any changes are detected a socket message is emitted. When the client received the message it would reload the page. I don't particularly like this implementation of client side reload, so if you have a better idea I would definitely like to hear them in the comments.
-
-The project can be found on GitHub. Feel free to play around with it.
-
-<script src="https://tarptaeya.github.io/repo-card/repo-card.js"></script>
-<div class="repo-card" data-repo="quintisimo/no-build" data-theme="dark-theme"></div>
