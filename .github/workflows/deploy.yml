@@ -15,11 +15,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout Repo
         uses: actions/checkout@v4
 
+      - name: Get Node Version from .nvmrc
+        id: node_version
+        run: |
+          version=$(cat .nvmrc)
+          echo "version=$version" >> $GITHUB_OUTPUT
+
+      - name: Get Pnpm Version from package.json
+        id: pnpm_version
+        shell: bash
+        run: |
+          version=$(jq -r '.packageManager' package.json)
+          echo "version=$(echo "$version" | sed 's/^pnpm@//')" >> $GITHUB_OUTPUT
+
       - name: Install, build, and upload your site
-        uses: withastro/action@v3
+        uses: withastro/action@v4
+        with:
+          node-version: ${{ steps.node_version.outputs.version }}
+          package-manager: ${{ steps.pnpm_version.outputs.version }}
 
   deploy:
     needs: build
