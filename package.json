@@ -24,7 +24,7 @@
     "unocss": "66.4.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.0",
+    "@biomejs/biome": "2.2.2",
     "@types/animejs": "3.1.13",
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
