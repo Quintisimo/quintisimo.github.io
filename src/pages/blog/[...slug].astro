@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
 import DisplayDate from "../../components/display-date.astro";
-import Page from "../../layouts/Page.astro";
 import RepoCard from "../../components/repo-card.astro";
+import Page from "../../layouts/Page.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
