@@ -1,4 +1,3 @@
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import unocss from "unocss/astro";
@@ -12,7 +11,6 @@ export default defineConfig({
     },
   },
   integrations: [
-    mdx(),
     sitemap(),
     unocss({
       injectReset: true,
