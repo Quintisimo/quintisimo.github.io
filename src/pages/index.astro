@@ -12,7 +12,10 @@ import PageHeading from "../components/page-heading.astro";
     class="flex flex-wrap flex-wrap-reverse gap-4 md:justify-between justify-center py-4"
   >
     <div class="flex-1 grid grid-rows-2 items-center">
-      <PageHeading texts={["Hello", "こんにちは", "नमस्कार"]} fallback="Hello" />
+      <PageHeading
+        texts={["Hello", "こんにちは", "नमस्कार"]}
+        fallback="Hello"
+      />
       <p class="text-xl" id="description">
         My name is {SITE_TITLE} and I'm a software engineer.
       </p>
