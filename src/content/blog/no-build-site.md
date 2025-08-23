@@ -115,9 +115,8 @@ export default function App() {
 
   return html`<div>
     <p class=${cx({ [center]: true, [red]: start })}>
-      Timer${" "} ${String(minutes).padStart(2, "0")}:${String(
-        seconds
-      ).padStart(2, "0")}
+      Timer${" "}
+      ${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}
     </p>
 
     <div class=${grid}>
