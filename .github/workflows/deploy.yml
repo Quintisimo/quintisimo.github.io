@@ -6,11 +6,6 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,28 +13,32 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: Get Node Version from .nvmrc
-        id: node_version
-        run: |
-          version=$(cat .nvmrc)
-          echo "version=$version" >> $GITHUB_OUTPUT
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
-      - name: Get Pnpm Version from package.json
-        id: pnpm_version
-        shell: bash
-        run: |
-          version=$(jq -r '.packageManager' package.json)
-          echo "version=$(echo "$version" | sed 's/^pnpm@//')" >> $GITHUB_OUTPUT
-
-      - name: Install, build, and upload your site
-        uses: withastro/action@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ steps.node_version.outputs.version }}
-          package-manager: ${{ steps.pnpm_version.outputs.version }}
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build site
+        run: pnpm build
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
