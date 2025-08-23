@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
 import DisplayDate from "../../components/display-date.astro";
 import Page from "../../layouts/Page.astro";
+import RepoCard from "../../components/repo-card.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -32,22 +33,9 @@ const { Content } = await post.render();
     <DisplayDate date={pubDate} />
     <Content />
     <p>The project can be found on GitHub. Feel free to play around with it.</p>
+    <RepoCard repo={repo} />
   </article>
 </Page>
-
-<script is:inline src="https://tarptaeya.github.io/repo-card/repo-card.js"></script>
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    const repo = document.querySelector(".repo-card");
-    if (prefersDarkScheme && repo) {
-      repo.setAttribute("data-theme", "dark-theme");
-    }
-
-    window.tarptaeya.reloadRepoCards()
-  });
-</script>
 
 <style is:global>
   article {
