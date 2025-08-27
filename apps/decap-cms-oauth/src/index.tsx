@@ -68,9 +68,9 @@ app.get("/callback", async (c) => {
           <script>
             const receiveMessage = (message) => {
               window.opener.postMessage(
-                "authorization:github:success:${raw(
+                \`authorization:github:success:${raw(
                   JSON.stringify({ token }),
-                )}",
+                )}\`,
                 "*",
               );
               window.removeEventListener("message", receiveMessage, false);
