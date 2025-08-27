@@ -1,10 +1,10 @@
 import transformDirectives from "@unocss/transformer-directives";
-import { defineConfig, presetIcons, presetUno, presetWebFonts } from "unocss";
+import { defineConfig, presetIcons, presetWebFonts, presetWind3 } from "unocss";
 
 export default defineConfig({
   transformers: [transformDirectives()],
   presets: [
-    presetUno(),
+    presetWind3(),
     presetWebFonts({
       provider: "google",
       fonts: {
