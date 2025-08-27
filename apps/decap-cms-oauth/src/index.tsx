@@ -1,6 +1,6 @@
 // Based on https://github.com/sterlingwes/decap-proxy
 import { type Context, Hono } from "hono";
-import { html } from "hono/html";
+import { html, raw } from "hono/html";
 import { OAuthClient } from "./oauth";
 
 interface Env {
@@ -64,17 +64,21 @@ app.get("/callback", async (c) => {
   return c.html(
     <html lang="en">
       <head>
-        {html`<script>
-          const receiveMessage = (message) => {
-            window.opener.postMessage(
-              "authorization:github:success:${JSON.stringify({ token })}",
-              "*",
-            );
-            window.removeEventListener("message", receiveMessage, false);
-          };
-          window.addEventListener("message", receiveMessage, false);
-          window.opener.postMessage("authorizing:github", "*");
-        </script>`}
+        {html`
+          <script>
+            const receiveMessage = (message) => {
+              window.opener.postMessage(
+                "authorization:github:success:${raw(
+                  JSON.stringify({ token }),
+                )}",
+                "*",
+              );
+              window.removeEventListener("message", receiveMessage, false);
+            };
+            window.addEventListener("message", receiveMessage, false);
+            window.opener.postMessage("authorizing:github", "*");
+          </script>
+        `}
         <body>
           <p>Authorizing Decap...</p>
         </body>
