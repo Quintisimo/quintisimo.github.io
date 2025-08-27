@@ -2,8 +2,8 @@
   "name": "personal-website",
   "type": "module",
   "scripts": {
-    "build": "pnpm -r build",
-    "dev": "pnpm -r dev",
+    "build": "pnpm --filter website build",
+    "dev": "pnpm --filter website dev",
     "lint": "biome check .",
     "postlint": "prettier --check .",
     "lint:fix": "biome check --write --unsafe .",
