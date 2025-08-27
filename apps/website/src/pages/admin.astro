@@ -1,0 +1,76 @@
+<script>
+  import CMS from "decap-cms-app";
+
+  const isLocal = window.location.hostname === "localhost";
+
+  CMS.init({
+    config: {
+      site_url: "https://quintuscardozo.dev/blog",
+      display_url: "https://quintuscardozo.dev/blog",
+      media_folder: "src/content/blog/assets",
+      public_folder: "assets",
+      show_preview_links: false,
+      editor: {
+        preview: false,
+      },
+      local_backend: isLocal,
+      backend: {
+        name: isLocal ? "git-gateway" : "github",
+        branch: "main",
+        repo: "quintisimo/quintisimo.github.io",
+        base_url: "https://decap.quintuscardozo.dev",
+        commit_messages: {
+          create: "feat: created blog post {{slug}}",
+          update: "fix: updated blog post {{slug}}",
+          delete: "chore: deleted blog post {{slug}}",
+          uploadMedia: "feat: uploaded media {{path}}",
+          deleteMedia: "chore: deleted media {{path}}",
+          openAuthoring: "chore: opened authoring for {{slug}}",
+        },
+      },
+      collections: [
+        {
+          name: "blog",
+          label: "Blog",
+          folder: "src/content/blog",
+          create: true,
+          slug: "{{slug}}",
+          fields: [
+            {
+              name: "title",
+              label: "Title",
+              widget: "string",
+            },
+            {
+              name: "description",
+              label: "Description",
+              widget: "text",
+            },
+            {
+              name: "pubDate",
+              label: "Publish Date",
+              widget: "datetime",
+              date_format: "MMM D YYYY",
+            },
+            {
+              name: "heroImage",
+              label: "Hero Image",
+              widget: "image",
+              allow_multiple: false,
+            },
+            {
+              name: "repo",
+              label: "Repo",
+              widget: "string",
+            },
+            {
+              name: "body",
+              label: "Body",
+              widget: "markdown",
+            },
+          ],
+        },
+      ],
+    },
+  });
+</script>

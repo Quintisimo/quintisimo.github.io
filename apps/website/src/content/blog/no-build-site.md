@@ -2,7 +2,7 @@
 title: No Build Site
 description: Writing new websites the old fashion way
 pubDate: Oct 24 2020
-heroImage: ./assets/no-build-site.jpg
+heroImage: assets/no-build-site.jpg
 repo: quintisimo/no-build
 ---
 
