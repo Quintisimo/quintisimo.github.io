@@ -1,5 +1,5 @@
 {
-  "name": "personal-website",
+  "name": "website",
   "type": "module",
   "scripts": {
     "build": "astro build",

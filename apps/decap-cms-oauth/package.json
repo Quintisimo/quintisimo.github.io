@@ -1,0 +1,16 @@
+{
+  "name": "decap-cms-oauth",
+  "type": "module",
+  "scripts": {
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "deploy": "wrangler deploy --minify",
+    "dev": "wrangler dev",
+    "postinstall": "pnpm cf-typegen"
+  },
+  "dependencies": {
+    "hono": "4.9.4"
+  },
+  "devDependencies": {
+    "wrangler": "4.33.0"
+  }
+}
