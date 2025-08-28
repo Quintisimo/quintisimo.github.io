@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import DisplayDate from "../../components/display-date.astro";
 import RepoCard from "../../components/repo-card.astro";
 import Page from "../../layouts/Page.astro";
@@ -8,7 +8,7 @@ import Page from "../../layouts/Page.astro";
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { id: post.id },
     props: post,
   }));
 }
@@ -17,7 +17,7 @@ type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { title, description, pubDate, heroImage, repo } = post.data;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <Page title={title} description={description}>

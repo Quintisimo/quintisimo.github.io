@@ -1,10 +1,11 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 const firstLetterCapital = (str: string) =>
   str.charAt(0) === str.charAt(0).toUpperCase();
 
 const blog = defineCollection({
-  // Type-check frontmatter using a schema
+  loader: glob({ pattern: "*.md", base: "./src/content/blog" }),
   schema: ({ image }) =>
     z.object({
       title: z
