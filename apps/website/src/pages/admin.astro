@@ -2,16 +2,18 @@
   import CMS from "decap-cms-app";
 
   const isLocal = window.location.hostname === "localhost";
-  const baseMediaFolder = "src/content/blog/assets";
-  const baseCollectionsFolder = "src/content/blog";
+  const mediaFolder = "src/content/blog/assets";
+  const collectionsFolder = "src/content/blog";
+
+  function getPath(path: string) {
+    return isLocal ? path : `apps/website/${path}`;
+  }
 
   CMS.init({
     config: {
       site_url: "https://quintuscardozo.dev/blog",
       display_url: "https://quintuscardozo.dev/blog",
-      media_folder: isLocal
-        ? baseMediaFolder
-        : `apps/website/${baseMediaFolder}`,
+      media_folder: getPath(mediaFolder),
       show_preview_links: false,
       editor: {
         preview: false,
@@ -35,9 +37,7 @@
         {
           name: "blog",
           label: "Blog",
-          folder: isLocal
-            ? baseCollectionsFolder
-            : `apps/website/${baseCollectionsFolder}`,
+          folder: getPath(collectionsFolder),
           create: true,
           slug: "{{slug}}",
           fields: [
