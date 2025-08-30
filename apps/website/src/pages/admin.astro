@@ -2,42 +2,59 @@
   import CMS from "decap-cms-app";
 
   const isLocal = window.location.hostname === "localhost";
-  const mediaFolder = "src/content/blog/assets";
-  const collectionsFolder = "src/content/blog";
+  const { href: blogUrl } = new URL("/blog", window.location.origin);
 
-  function getPath(path: string) {
-    return isLocal ? path : `apps/website/${path}`;
+  const baseCollectionsFolder = "src/content/blog";
+  const collectionsFolder = isLocal
+    ? baseCollectionsFolder
+    : `apps/website/${baseCollectionsFolder}`;
+  const mediaFolder = `${collectionsFolder}/assets`;
+
+  type Backend = Exclude<
+    Parameters<typeof CMS.init>[0],
+    undefined
+  >["config"]["backend"];
+
+  function getBackend(): Backend {
+    if (isLocal) {
+      return {
+        name: "git-gateway",
+      };
+    }
+
+    return {
+      name: "github",
+      branch: "main",
+      repo: "quintisimo/quintisimo.github.io",
+      base_url: "https://decap.quintuscardozo.dev",
+      commit_messages: {
+        create: "feat: created blog post {{slug}}",
+        update: "fix: updated blog post {{slug}}",
+        delete: "chore: deleted blog post {{slug}}",
+        uploadMedia: "feat: uploaded media {{path}}",
+        deleteMedia: "chore: deleted media {{path}}",
+        openAuthoring: "chore: opened authoring for {{slug}}",
+      },
+    };
   }
 
   CMS.init({
     config: {
-      site_url: "https://quintuscardozo.dev/blog",
-      display_url: "https://quintuscardozo.dev/blog",
-      media_folder: getPath(mediaFolder),
+      site_url: blogUrl,
+      display_url: blogUrl,
+      media_folder: mediaFolder,
       show_preview_links: false,
+      load_config_file: false,
       editor: {
         preview: false,
       },
       local_backend: isLocal,
-      backend: {
-        name: isLocal ? "git-gateway" : "github",
-        branch: "main",
-        repo: "quintisimo/quintisimo.github.io",
-        base_url: "https://decap.quintuscardozo.dev",
-        commit_messages: {
-          create: "feat: created blog post {{slug}}",
-          update: "fix: updated blog post {{slug}}",
-          delete: "chore: deleted blog post {{slug}}",
-          uploadMedia: "feat: uploaded media {{path}}",
-          deleteMedia: "chore: deleted media {{path}}",
-          openAuthoring: "chore: opened authoring for {{slug}}",
-        },
-      },
+      backend: getBackend(),
       collections: [
         {
           name: "blog",
           label: "Blog",
-          folder: getPath(collectionsFolder),
+          folder: collectionsFolder,
           create: true,
           slug: "{{slug}}",
           fields: [
@@ -79,3 +96,18 @@
     },
   });
 </script>
+
+<head>
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://decapcms.org/img/favicon/favicon-32x32.png"
+    sizes="32x32"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://decapcms.org/img/favicon/favicon-16x16.png"
+    sizes="16x16"
+  />
+</head>
