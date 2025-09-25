@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "4.0.12",
-    "@astrojs/sitemap": "3.5.1",
+    "@astrojs/sitemap": "3.6.0",
     "@iconify-json/jam": "1.2.3",
     "@iconify-json/material-symbols": "1.2.37",
     "@unocss/reset": "66.5.1",
