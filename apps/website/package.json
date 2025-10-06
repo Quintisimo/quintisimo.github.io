@@ -15,7 +15,7 @@
     "@iconify-json/material-symbols": "1.2.39",
     "@unocss/reset": "66.5.2",
     "@unocss/transformer-directives": "66.5.2",
-    "animejs": "4.2.0",
+    "animejs": "4.2.1",
     "astro": "5.14.1",
     "decap-cms-app": "3.8.4",
     "sharp": "0.34.4",
