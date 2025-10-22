@@ -24,8 +24,8 @@ importers:
   apps/decap-cms-oauth:
     dependencies:
       hono:
-        specifier: 4.9.10
-        version: 4.9.10
+        specifier: 4.10.2
+        version: 4.10.2
     devDependencies:
       wrangler:
         specifier: 4.42.2
@@ -2663,8 +2663,8 @@ packages:
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
 
-  hono@4.9.10:
-    resolution: {integrity: sha512-AlI15ijFyKTXR7eHo7QK7OR4RoKIedZvBuRjO8iy4zrxvlY5oFCdiRG/V/lFJHCNXJ0k72ATgnyzx8Yqa5arug==}
+  hono@4.10.2:
+    resolution: {integrity: sha512-p6fyzl+mQo6uhESLxbF5WlBOAJMDh36PljwlKtP5V1v09NxlqGru3ShK+4wKhSuhuYf8qxMmrivHOa/M7q0sMg==}
     engines: {node: '>=16.9.0'}
 
   hosted-git-info@2.8.9:
@@ -4161,6 +4161,7 @@ packages:
   sitemap@8.0.0:
     resolution: {integrity: sha512-+AbdxhM9kJsHtruUF39bwS/B0Fytw6Fr1o4ZAIAEqA6cke2xcoO2GleBw9Zw7nRzILVEgz7zBM5GiTJjie1G9A==}
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    deprecated: 'SECURITY: Multiple vulnerabilities fixed in 8.0.1 (XML injection, path traversal, command injection, protocol injection). Upgrade immediately: npm install sitemap@8.0.1'
     hasBin: true
 
   slate-base64-serializer@0.2.115:
@@ -7924,7 +7925,7 @@ snapshots:
     dependencies:
       react-is: 16.13.1
 
-  hono@4.9.10: {}
+  hono@4.10.2: {}
 
   hosted-git-info@2.8.9: {}
 
