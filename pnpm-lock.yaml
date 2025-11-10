@@ -24,8 +24,8 @@ importers:
   apps/decap-cms-oauth:
     dependencies:
       hono:
-        specifier: 4.10.3
-        version: 4.10.3
+        specifier: 4.10.4
+        version: 4.10.4
     devDependencies:
       wrangler:
         specifier: 4.45.3
@@ -2673,8 +2673,8 @@ packages:
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
 
-  hono@4.10.3:
-    resolution: {integrity: sha512-2LOYWUbnhdxdL8MNbNg9XZig6k+cZXm5IjHn2Aviv7honhBMOHb+jxrKIeJRZJRmn+htUCKhaicxwXuUDlchRA==}
+  hono@4.10.4:
+    resolution: {integrity: sha512-YG/fo7zlU3KwrBL5vDpWKisLYiM+nVstBQqfr7gCPbSYURnNEP9BDxEMz8KfsDR9JX0lJWDRNc6nXX31v7ZEyg==}
     engines: {node: '>=16.9.0'}
 
   hosted-git-info@2.8.9:
@@ -7941,7 +7941,7 @@ snapshots:
     dependencies:
       react-is: 16.13.1
 
-  hono@4.10.3: {}
+  hono@4.10.4: {}
 
   hosted-git-info@2.8.9: {}
 
