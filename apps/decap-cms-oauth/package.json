@@ -8,7 +8,7 @@
     "postinstall": "pnpm cf-typegen"
   },
   "dependencies": {
-    "hono": "4.10.7"
+    "hono": "4.11.1"
   },
   "devDependencies": {
     "wrangler": "4.53.0"
