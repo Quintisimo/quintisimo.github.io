@@ -16,7 +16,7 @@
     "@unocss/reset": "66.5.10",
     "@unocss/transformer-directives": "66.5.10",
     "animejs": "4.2.2",
-    "astro": "5.16.5",
+    "astro": "5.16.6",
     "decap-cms-app": "3.9.0",
     "sharp": "0.34.5",
     "unocss": "66.5.10"
