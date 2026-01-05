@@ -46,8 +46,8 @@ importers:
         specifier: 1.2.50
         version: 1.2.50
       '@unocss/reset':
-        specifier: 66.5.11
-        version: 66.5.11
+        specifier: 66.5.12
+        version: 66.5.12
       '@unocss/transformer-directives':
         specifier: 66.5.11
         version: 66.5.11
@@ -1351,9 +1351,6 @@ packages:
 
   '@unocss/preset-wind@66.5.12':
     resolution: {integrity: sha512-wp1/8JqQriv1AqpxskKbZYD9TNqZLQ9VBr7nNN6OkiPXBE1egEwnyb/fY+sS7IpEgwi4N9uehwQgk0/xs84SWg==}
-
-  '@unocss/reset@66.5.11':
-    resolution: {integrity: sha512-Q7HudqDXj+IG2nUpUPKb70xwKqbyO6Lkf9igyXQ2XUypnqN9WZYm8leEnweBKiBuROrY1E8c+CqnS8bO/vUTNw==}
 
   '@unocss/reset@66.5.12':
     resolution: {integrity: sha512-wGTMu1sXVdxnzAonzHk/yUsyDyGrr8OiXCDSC7pVNep6eXhhf0g85v/Gx9FoAjZRyCppm6ePDWXtWYS8zglfCQ==}
@@ -6120,8 +6117,6 @@ snapshots:
     dependencies:
       '@unocss/core': 66.5.12
       '@unocss/preset-wind3': 66.5.12
-
-  '@unocss/reset@66.5.11': {}
 
   '@unocss/reset@66.5.12': {}
 
