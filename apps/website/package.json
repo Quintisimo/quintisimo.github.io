@@ -12,7 +12,7 @@
     "@astrojs/rss": "4.0.14",
     "@astrojs/sitemap": "3.6.0",
     "@iconify-json/jam": "1.2.3",
-    "@iconify-json/material-symbols": "1.2.50",
+    "@iconify-json/material-symbols": "1.2.51",
     "@unocss/reset": "66.5.12",
     "@unocss/transformer-directives": "66.5.12",
     "animejs": "4.2.2",
