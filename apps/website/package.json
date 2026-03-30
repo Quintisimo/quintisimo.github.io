@@ -9,7 +9,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/rss": "4.0.17",
+    "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.1",
     "@iconify-json/jam": "1.2.3",
     "@iconify-json/material-symbols": "1.2.63",
