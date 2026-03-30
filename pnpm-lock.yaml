@@ -71,8 +71,8 @@ importers:
         specifier: 3.1.13
         version: 3.1.13
       decap-server:
-        specifier: 3.5.2
-        version: 3.5.2
+        specifier: 3.6.0
+        version: 3.6.0
       npm-run-all:
         specifier: 4.1.5
         version: 4.1.5
@@ -2149,8 +2149,8 @@ packages:
       prop-types: ^15.7.2
       react: ^19.1.0
 
-  decap-server@3.5.2:
-    resolution: {integrity: sha512-eOecun5rGhTPIwVe+0u8e9MK3Cn4Oiamqzlp572YYk1CfmWgJXP2H89RomXcTKNS6Y9MeRbqBIXgulcChzVing==}
+  decap-server@3.6.0:
+    resolution: {integrity: sha512-DHjHK4zRDWWfG6YTZT79OeclsMVMmOthpsj1Gb5luKKpSsetAWt7olj7XjYHCNPQxbK2cNY8oH6BFLHhRA2xZA==}
     engines: {node: '>=v10.22.1'}
     hasBin: true
 
@@ -3452,8 +3452,8 @@ packages:
   path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
 
-  path-to-regexp@0.1.12:
-    resolution: {integrity: sha512-RA1GjUVMnvYFxuqovrEqZoxxW5NUZqbwKtYz/Tt7nXerk0LbLblQmrsgdeOxV5SFHf0UDggjS/bSeOZwt1pmEQ==}
+  path-to-regexp@0.1.13:
+    resolution: {integrity: sha512-A/AGNMFN3c8bOlvV9RreMdrv7jsmF9XIfDeCd87+I8RNg6s78BhJxMu69NEMHBSJFxKidViTEdruRwEk/WIKqA==}
 
   path-to-regexp@1.9.0:
     resolution: {integrity: sha512-xIp7/apCFJuUHdDLWe8O1HIkb0kQrOMb/0u6FXQjemHn/ii5LrIzU6bdECnsiTF/GjZkMEKg1xdiZwNqDYlZ6g==}
@@ -4066,8 +4066,8 @@ packages:
     resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
     engines: {node: '>= 0.4'}
 
-  simple-git@3.32.2:
-    resolution: {integrity: sha512-n/jhNmvYh8dwyfR6idSfpXrFazuyd57jwNMzgjGnKZV/1lTh0HKvPq20v4AQ62rP+l19bWjjXPTCdGHMt0AdrQ==}
+  simple-git@3.33.0:
+    resolution: {integrity: sha512-D4V/tGC2sjsoNhoMybKyGoE+v8A60hRawKQ1iFRA1zwuDgGZCBJ4ByOzZ5J8joBbi4Oam0qiPH+GhzmSBwbJng==}
 
   sirv@3.0.2:
     resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
@@ -7036,7 +7036,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  decap-server@3.5.2:
+  decap-server@3.6.0:
     dependencies:
       '@hapi/joi': 17.1.1
       async-mutex: 0.3.2
@@ -7044,7 +7044,7 @@ snapshots:
       dotenv: 10.0.0
       express: 4.22.1
       morgan: 1.10.1
-      simple-git: 3.32.2
+      simple-git: 3.33.0
       what-the-diff: 0.6.0
       winston: 3.19.0
     transitivePeerDependencies:
@@ -7352,7 +7352,7 @@ snapshots:
       methods: 1.1.2
       on-finished: 2.4.1
       parseurl: 1.3.3
-      path-to-regexp: 0.1.12
+      path-to-regexp: 0.1.13
       proxy-addr: 2.0.7
       qs: 6.14.2
       range-parser: 1.2.1
@@ -8844,7 +8844,7 @@ snapshots:
 
   path-parse@1.0.7: {}
 
-  path-to-regexp@0.1.12: {}
+  path-to-regexp@0.1.13: {}
 
   path-to-regexp@1.9.0:
     dependencies:
@@ -9706,7 +9706,7 @@ snapshots:
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
-  simple-git@3.32.2:
+  simple-git@3.33.0:
     dependencies:
       '@kwsites/file-exists': 1.1.1
       '@kwsites/promise-deferred': 1.1.1
