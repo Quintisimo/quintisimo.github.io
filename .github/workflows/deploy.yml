@@ -45,7 +45,7 @@ jobs:
     steps:
       - name: Deploy website to github pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   deploy-worker:
     runs-on: ubuntu-latest
