@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import fs from "node:fs/promises";
+import path from "node:path";
+import Page from "../../layouts/Page.astro";
+
+export async function getStaticPaths() {
+  const albums = await fs.readdir("./public/albums", { withFileTypes: true });
+  return albums
+    .filter((dir) => dir.isDirectory())
+    .map((album) => ({
+      params: { album: album.name },
+      props: { album: album.name },
+    }));
+}
+
+type Props = { album: string };
+
+const { album } = Astro.props;
+
+const albumFolder = path.join("./public/albums", album);
+const folder = await fs.readdir(albumFolder);
+const images = folder
+  .filter((img) => img.endsWith("png"))
+  .map((image) => path.join("/albums", album, image));
+---
+
+<Page class="grid grid-cols-3 md:grid-cols-6 gap-4 place-items-center">
+  {
+    images.map((image) => (
+      <Image
+        class="cursor-pointer photos"
+        src={image}
+        width="500"
+        height="500"
+        alt=""
+        priority
+      />
+    ))
+  }
+</Page>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const body = document.querySelector("body")!;
+    const photos = document.querySelectorAll(".photos");
+
+    const backdrop = document.createElement("div");
+    backdrop.classList.add(
+      "fixed",
+      "inset-0",
+      "backdrop-blur-md",
+      "grid",
+      "place-items-center",
+    );
+
+    document.addEventListener("click", () => {
+      body.removeChild(backdrop);
+    });
+
+    for (const photo of photos) {
+      photo.addEventListener("click", (evt) => {
+        evt.stopPropagation();
+        const img = evt.target as HTMLImageElement | null;
+        if (!img) return;
+
+        const cloneImg = img.cloneNode() as HTMLImageElement;
+        cloneImg.removeAttribute("width");
+        cloneImg.removeAttribute("height");
+        cloneImg.classList.add("w-[80%]");
+
+        backdrop.replaceChildren(cloneImg);
+        body.appendChild(backdrop);
+      });
+    }
+  });
+</script>
