@@ -31,7 +31,7 @@ jobs:
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: apps/website/dist
+          path: dist
 
   deploy-website:
     needs: build-website
@@ -46,35 +46,3 @@ jobs:
       - name: Deploy website to github pages
         id: deployment
         uses: actions/deploy-pages@v5
-
-  deploy-worker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v6
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Install node
-        uses: actions/setup-node@v6
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Deploy
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          packageManager: pnpm
-          workingDirectory: apps/decap-cms-oauth
-          secrets: |
-            GH_OAUTH_ID
-            GH_OAUTH_SECRET
-        env:
-          GH_OAUTH_ID: ${{ secrets.GH_OAUTH_ID }}
-          GH_OAUTH_SECRET: ${{ secrets.GH_OAUTH_SECRET }}

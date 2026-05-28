@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import DisplayDate from "../../components/display-date.astro";
+import RepoCard from "../../components/repo-card.astro";
+import Page from "../../layouts/Page.astro";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("blog");
+	return posts.map((post) => ({
+		params: { id: post.id },
+		props: post,
+	}));
+}
+
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+const { title, description, pubDate, heroImage, repo } = post.data;
+const { Content } = await render(post);
+---
+
+<Page title={title} description={description}>
+	<article>
+		<Image
+			src={heroImage}
+			alt="hero"
+			height={400}
+			class="rounded-xl my-2 w-full h-sm object-cover"
+			transition:name={title}
+		/>
+		<h1 class="text-5xl uppercase">{title}</h1>
+		<DisplayDate date={pubDate} />
+		<Content />
+		<p>The project can be found on GitHub. Feel free to play around with it.</p>
+		<RepoCard repo={repo} />
+	</article>
+</Page>
+
+<style is:global>
+article {
+	@apply flex flex-col gap-4;
+
+	& > :is(h2, h3) {
+		@apply uppercase font-bold italic;
+	}
+
+	h1 {
+		@apply text-4xl;
+	}
+
+	h2 {
+		@apply text-2xl;
+	}
+}
+</style>

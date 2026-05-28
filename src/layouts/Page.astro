@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { slide } from "astro:transitions";
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro";
+import Meta from "../components/meta.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: CollectionEntry<"blog">["data"]["heroImage"];
+	class?: string;
+}
+
+const {
+	title = SITE_TITLE,
+	description = SITE_DESCRIPTION,
+	image,
+	class: className,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<Meta title={title} description={description} image={image} />
+	</head>
+	<body
+		class="h-screen grid grid-rows-[5rem_1fr_5rem] font-mono @dark:bg-black @dark:text-white px-10"
+	>
+		<Header />
+		<main transition:animate={slide({ duration: "1" })} class={className}>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
