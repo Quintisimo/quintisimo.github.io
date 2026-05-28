@@ -1,0 +1,34 @@
+---
+import Icon from "./icon.astro";
+
+const today = new Date();
+---
+
+<footer class="self-center flex justify-between items-center text-xs">
+	<div class="flex gap-2 items-center">
+		<Icon title="Copyright" icon="i-material-symbols:copyright-outline-sharp" />
+		<span> {today.getFullYear()} Quintus Cardozo. All rights reserved. </span>
+	</div>
+	<div class="flex gap-2">
+		<Icon
+			link="https://instagram.com/quintisimo"
+			title="Instagram"
+			icon="i-jam:instagram"
+		/>
+		<Icon
+			link="https://twitter.com/quintisimo"
+			title="Twitter"
+			icon="i-jam:twitter-square"
+		/>
+		<Icon
+			link="https://www.linkedin.com/in/quintus-cardozo/"
+			title="LinkedIn"
+			icon="i-jam:linkedin-square"
+		/>
+		<Icon
+			link="https://github.com/quintisimo"
+			title="GitHub"
+			icon="i-jam:github-square"
+		/>
+	</div>
+</footer>

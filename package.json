@@ -1,19 +1,31 @@
 {
-  "name": "personal-website",
+  "name": "website",
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter website build",
-    "dev": "pnpm --filter website dev",
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview",
     "lint": "biome check .",
-    "postlint": "prettier --check .",
-    "lint:fix": "biome check --write --unsafe .",
-    "postlint:fix": "prettier --write ."
+    "lint:fix": "biome check --write --unsafe ."
+  },
+  "dependencies": {
+    "@astrojs/rss": "4.0.18",
+    "@astrojs/sitemap": "3.7.2",
+    "@iconify-json/jam": "1.2.3",
+    "@iconify-json/material-symbols": "1.2.74",
+    "@unocss/reset": "66.6.8",
+    "@unocss/transformer-directives": "66.7.0",
+    "animejs": "4.4.1",
+    "astro": "6.3.5",
+    "sharp": "0.34.5"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
-    "prettier": "3.8.3",
-    "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-packagejson": "3.0.2"
+    "@types/animejs": "3.1.13",
+    "@unocss/astro": "66.7.0",
+    "decap-server": "3.7.0",
+    "npm-run-all": "4.1.5",
+    "unocss": "66.7.0"
   },
   "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b"
 }

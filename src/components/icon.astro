@@ -1,8 +1,8 @@
 ---
 interface Props {
-  link?: string;
-  title: string;
-  icon: string;
+	link?: string;
+	title: string;
+	icon: string;
 }
 
 const { link, title, icon } = Astro.props;
@@ -10,6 +10,6 @@ const Element = link ? "a" : "span";
 ---
 
 <Element href={link} target="_blank">
-  <span class="sr-only">{title}</span>
-  <div class:list={["text-xl", icon]}></div>
+	<span class="sr-only">{title}</span>
+	<div class:list={["text-xl", icon]}></div>
 </Element>
