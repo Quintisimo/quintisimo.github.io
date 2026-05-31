@@ -1,23 +1,30 @@
 ---
 import { Image } from "astro:assets";
-import fs from "node:fs";
+import type { ImageMetadata } from "astro";
 import Page from "../../layouts/Page.astro";
 
-const images = Array.from(fs.globSync("./public/albums/*/1.png")).map((image) =>
-	image.replace("public", ""),
-);
+const images = Object.entries(
+	import.meta.glob<{ default: ImageMetadata }>("/src/assets/albums/*/1.png", {
+		eager: true,
+	}),
+).map(([imgPath, image]) => {
+	const paths = imgPath.split("/");
+	const album = paths[paths.length - 2];
+
+	return {
+		image,
+		album,
+	};
+});
 ---
 
 <Page class="grid gap-4 grid-cols-3 md:grid-cols-6 justify-items-center">
-	{images.map((image) => {
-      const paths = image.split("/");
-      const album = paths[paths.length - 2];
-
+	{images.map(({ image, album }) => {
       return (
         <a href={`/photos/${album}`}>
           <Image
             class="border border-black @dark:border-white"
-            src={image}
+            src={image.default}
             alt=""
             height="200"
             width="200"
