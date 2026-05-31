@@ -3,13 +3,15 @@ interface Props {
 	link?: string;
 	title: string;
 	icon: string;
+	class?: string;
+	id?: string;
 }
 
-const { link, title, icon } = Astro.props;
+const { link, title, icon, class: className, id } = Astro.props;
 const Element = link ? "a" : "span";
 ---
 
-<Element href={link} target="_blank">
+<Element href={link} target="_blank" {id}>
 	<span class="sr-only">{title}</span>
-	<div class:list={["text-xl", icon]}></div>
+	<div class:list={["text-xl", icon, className]} title={title}></div>
 </Element>
