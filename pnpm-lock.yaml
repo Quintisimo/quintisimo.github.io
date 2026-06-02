@@ -46,8 +46,8 @@ importers:
         specifier: 66.7.0
         version: 66.7.0(vite@7.3.3(@types/node@25.6.2)(jiti@2.7.0))
       decap-server:
-        specifier: 3.7.0
-        version: 3.7.0
+        specifier: 3.8.0
+        version: 3.8.0
       npm-run-all:
         specifier: 4.1.5
         version: 4.1.5
@@ -1227,8 +1227,8 @@ packages:
       supports-color:
         optional: true
 
-  decap-server@3.7.0:
-    resolution: {integrity: sha512-U6CU2JyoB8NLoOv+pAMYHs85EUvN/z1AE83lvYdEoEzFA8EUAu1oNYMLniTiXHMijgz6xBHbRWhc+fUSS1lxXw==}
+  decap-server@3.8.0:
+    resolution: {integrity: sha512-luiIjrzC4kSfLgDZUtgDj+kRLuU5fm1D9onDm6Y1Xa5PTr2fqWsG11WmHldZBYB8VGeYcQjenFW4QvrRt/PZCg==}
     engines: {node: '>=v10.22.1'}
     hasBin: true
 
@@ -1380,8 +1380,8 @@ packages:
   eventemitter3@5.0.4:
     resolution: {integrity: sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw==}
 
-  express@4.22.1:
-    resolution: {integrity: sha512-F2X8g9P1X7uCPZMA3MVf9wcTqlyNp7IhH5qPCI0izhaOIYXaW9L535tGA3qmjRzpH+bZczqq7hVKxTR4NWnu+g==}
+  express@4.22.2:
+    resolution: {integrity: sha512-IuL+Elrou2ZvCFHs18/CIzy2Nzvo25nZ1/D2eIZlz7c+QUayAcYoiM2BthCjs+EBHVpjYjcuLDAiCWgeIX3X1Q==}
     engines: {node: '>= 0.10.0'}
 
   extend@3.0.2:
@@ -2137,12 +2137,8 @@ packages:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
 
-  qs@6.14.2:
-    resolution: {integrity: sha512-V/yCWTTF7VJ9hIh18Ugr2zhJMP01MY7c5kh4J870L7imm6/DIzBsNLTXzMwUA3yZ5b/KBqLx8Kp3uRvd7xSe3Q==}
-    engines: {node: '>=0.6'}
-
-  qs@6.15.1:
-    resolution: {integrity: sha512-6YHEFRL9mfgcAvql/XhwTvf5jKcOiiupt2FiJxHkiX1z4j7WL8J/jRHYLluORvc1XxB5rV20KoeK00gVJamspg==}
+  qs@6.15.2:
+    resolution: {integrity: sha512-Rzq0KEyX/w/tEybncDgdkZrJgVUsUMk3xjh3t5bv3S1HTAtg+uOYt72+ZfwiQwKdysThkTBdL/rTi6HDmX9Ddw==}
     engines: {node: '>=0.6'}
 
   quansync@1.0.0:
@@ -3734,7 +3730,7 @@ snapshots:
       http-errors: 2.0.1
       iconv-lite: 0.4.24
       on-finished: 2.4.1
-      qs: 6.15.1
+      qs: 6.15.2
       raw-body: 2.5.3
       type-is: 1.6.18
       unpipe: 1.0.0
@@ -3907,13 +3903,13 @@ snapshots:
     dependencies:
       ms: 2.1.3
 
-  decap-server@3.7.0:
+  decap-server@3.8.0:
     dependencies:
       '@hapi/joi': 17.1.1
       async-mutex: 0.3.2
       cors: 2.8.6
       dotenv: 10.0.0
-      express: 4.22.1
+      express: 4.22.2
       morgan: 1.10.1
       simple-git: 3.36.0
       what-the-diff: 0.6.0
@@ -4126,7 +4122,7 @@ snapshots:
 
   eventemitter3@5.0.4: {}
 
-  express@4.22.1:
+  express@4.22.2:
     dependencies:
       accepts: 1.3.8
       array-flatten: 1.1.1
@@ -4149,7 +4145,7 @@ snapshots:
       parseurl: 1.3.3
       path-to-regexp: 0.1.13
       proxy-addr: 2.0.7
-      qs: 6.14.2
+      qs: 6.15.2
       range-parser: 1.2.1
       safe-buffer: 5.2.1
       send: 0.19.2
@@ -5179,11 +5175,7 @@ snapshots:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
 
-  qs@6.14.2:
-    dependencies:
-      side-channel: 1.1.0
-
-  qs@6.15.1:
+  qs@6.15.2:
     dependencies:
       side-channel: 1.1.0
 
