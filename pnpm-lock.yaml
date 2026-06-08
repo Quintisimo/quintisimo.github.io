@@ -46,8 +46,8 @@ importers:
         specifier: 66.7.0
         version: 66.7.0(vite@7.3.5(@types/node@25.6.2)(jiti@2.7.0))
       decap-server:
-        specifier: 3.8.0
-        version: 3.8.0
+        specifier: 3.9.0
+        version: 3.9.0
       npm-run-all:
         specifier: 4.1.5
         version: 4.1.5
@@ -1221,8 +1221,8 @@ packages:
       supports-color:
         optional: true
 
-  decap-server@3.8.0:
-    resolution: {integrity: sha512-luiIjrzC4kSfLgDZUtgDj+kRLuU5fm1D9onDm6Y1Xa5PTr2fqWsG11WmHldZBYB8VGeYcQjenFW4QvrRt/PZCg==}
+  decap-server@3.9.0:
+    resolution: {integrity: sha512-ngOBPVVPP2d7nxuauIZ1W1zE5V+JryQMMIrWVI/qmu7/dErE+8IQKzbgdFEb3Ed+DUHfiZAvAI2cNKd3puDv2g==}
     engines: {node: '>=v10.22.1'}
     hasBin: true
 
@@ -1920,8 +1920,8 @@ packages:
   mlly@1.8.2:
     resolution: {integrity: sha512-d+ObxMQFmbt10sretNDytwt85VrbkhhUA/JBGm1MPaWJ65Cl4wOgLaB1NYvJSZ0Ef03MMEU/0xpPMXUIQ29UfA==}
 
-  morgan@1.10.1:
-    resolution: {integrity: sha512-223dMRJtI/l25dJKWpgij2cMtywuG/WiUKXdvwfbhGKBhy1puASqXwFzmWZ7+K73vUPoR7SS2Qz2cI/g9MKw0A==}
+  morgan@1.11.0:
+    resolution: {integrity: sha512-zSkVu3t18r39pw4ixfBKvfZi3y2UOqr7d4WYwcj3m8nXpEQK4rPO6GLzs/CExoRgmX3y9EjmmcXqv6jq0SK46g==}
     engines: {node: '>= 0.8.0'}
 
   mrmime@2.0.1:
@@ -1999,10 +1999,6 @@ packages:
 
   ohash@2.0.11:
     resolution: {integrity: sha512-RdR9FQrFwNBNXAr4GixM8YaRZRJ5PUWbKYbE5eOsrwAjJW0q2REGcf79oYPsLyskQCZG1PLN+S/K1V00joZAoQ==}
-
-  on-finished@2.3.0:
-    resolution: {integrity: sha512-ikqdkGAAyf/X/gPhXGvfgAytDZtDbr+bkNUJ0N9h5MI/dmdgCs3l6hoHrcUv41sRKew3jIwrp4qQDXiK99Utww==}
-    engines: {node: '>= 0.8'}
 
   on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
@@ -3902,14 +3898,14 @@ snapshots:
     dependencies:
       ms: 2.1.3
 
-  decap-server@3.8.0:
+  decap-server@3.9.0:
     dependencies:
       '@hapi/joi': 17.1.1
       async-mutex: 0.3.2
       cors: 2.8.6
       dotenv: 10.0.0
       express: 4.22.2
-      morgan: 1.10.1
+      morgan: 1.11.0
       simple-git: 3.36.0
       what-the-diff: 0.6.0
       winston: 3.19.0
@@ -4950,12 +4946,12 @@ snapshots:
       pkg-types: 1.3.1
       ufo: 1.6.4
 
-  morgan@1.10.1:
+  morgan@1.11.0:
     dependencies:
       basic-auth: 2.0.1
       debug: 2.6.9
       depd: 2.0.0
-      on-finished: 2.3.0
+      on-finished: 2.4.1
       on-headers: 1.1.0
     transitivePeerDependencies:
       - supports-color
@@ -5031,10 +5027,6 @@ snapshots:
       ufo: 1.6.4
 
   ohash@2.0.11: {}
-
-  on-finished@2.3.0:
-    dependencies:
-      ee-first: 1.1.1
 
   on-finished@2.4.1:
     dependencies:
