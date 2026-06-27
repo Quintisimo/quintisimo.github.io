@@ -8,6 +8,7 @@ export async function getStaticPaths() {
 	const albums = await fs.readdir("./src/assets/albums", {
 		withFileTypes: true,
 	});
+
 	return albums
 		.filter((dir) => dir.isDirectory())
 		.map((album) => ({
@@ -19,10 +20,15 @@ export async function getStaticPaths() {
 const { album } = Astro.props;
 
 const images = Object.entries(
-	import.meta.glob<{ default: ImageMetadata }>("/src/assets/albums/*/*.png", {
-		eager: true,
-	}),
-).filter(([imgPath, _image]) => imgPath.includes(album));
+	import.meta.glob<{ default: ImageMetadata }>(
+		"/src/assets/albums/*/*.(png|jpg)",
+		{
+			eager: true,
+		},
+	),
+).filter(
+	([imgPath, _image]) => imgPath.includes(album) && !imgPath.includes("1.png"),
+);
 ---
 
 <Page class="grid grid-cols-3 md:grid-cols-6 gap-4 place-items-center">
@@ -30,7 +36,10 @@ const images = Object.entries(
       <Image
         data-preview="max-w-full max-h-full object-contain"
         data-path={imgPath}
-        class="cursor-pointer photos"
+        class:list={[
+          "cursor-pointer photos",
+          image.default.height > image.default.width && "row-span-2",
+        ]}
         src={image.default}
         alt=""
         priority
