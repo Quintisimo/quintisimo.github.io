@@ -90,7 +90,7 @@ document.addEventListener("astro:page-load", () => {
 			cloneImg.removeAttribute("width");
 			cloneImg.removeAttribute("height");
 			cloneImg.classList.add(...(img.dataset.preview ?? "").split(" "));
-			ghLink.href = `https://raw.githubusercontent.com/Quintisimo/quintisimo.github.io/refs/heads/main${img.dataset.path}`;
+			ghLink.href = `https://media.githubusercontent.com/media/Quintisimo/quintisimo.github.io/refs/heads/main${img.dataset.path}`;
 
 			image.replaceChildren(cloneImg);
 			backdrop.classList.remove("hidden");
