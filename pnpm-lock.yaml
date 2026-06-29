@@ -21,8 +21,8 @@ importers:
         specifier: 1.2.81
         version: 1.2.81
       '@unocss/reset':
-        specifier: 66.7.2
-        version: 66.7.2
+        specifier: 66.7.3
+        version: 66.7.3
       '@unocss/transformer-directives':
         specifier: 66.7.2
         version: 66.7.2
@@ -942,8 +942,8 @@ packages:
   '@unocss/reset@66.7.0':
     resolution: {integrity: sha512-auMYYTWXrE1n7lPoT1TFyGhmrBlgMdn9GgvypBSxtdi9Jg6Rz4qdNngEbJeSnqnjfRawx247TJJdNKiigSZ29g==}
 
-  '@unocss/reset@66.7.2':
-    resolution: {integrity: sha512-dKRbpBicfchatvqK2wqfX8gtNTCf+2pFdXBNDC0Cl2PZ8QCVMtCaHTOTSyruM0Pw7aqST4SlPkF5f8x7aZZL0w==}
+  '@unocss/reset@66.7.3':
+    resolution: {integrity: sha512-EuWSHSWsl+qdc+7c4car0IPEDbcuyrGUvFqTOo2AV383lOuIzvyuRxkuL1rLqb2kh+ZYkpBnL49+FXmjX36/nA==}
 
   '@unocss/rule-utils@66.7.0':
     resolution: {integrity: sha512-DMJIiey/m+xr0hpSbxFhSbKlC3e7QsuwdAEdgMmIM7pEcu/AEMl7oH198QYX9880P2X0hy5iFE6UCWx9CwGAXQ==}
@@ -3533,7 +3533,7 @@ snapshots:
 
   '@unocss/reset@66.7.0': {}
 
-  '@unocss/reset@66.7.2': {}
+  '@unocss/reset@66.7.3': {}
 
   '@unocss/rule-utils@66.7.0':
     dependencies:
