@@ -5,34 +5,35 @@ import Icon from "../../components/icon.astro";
 import Page from "../../layouts/Page.astro";
 
 export async function getStaticPaths() {
-	const albums = await fs.readdir("./src/assets/albums", {
-		withFileTypes: true,
-	});
+  const albums = await fs.readdir("./src/assets/albums", {
+    withFileTypes: true,
+  });
 
-	return albums
-		.filter((dir) => dir.isDirectory())
-		.map((album) => ({
-			params: { album: album.name },
-			props: { album: album.name },
-		}));
+  return albums
+    .filter((dir) => dir.isDirectory())
+    .map((album) => ({
+      params: { album: album.name },
+      props: { album: album.name },
+    }));
 }
 
 const { album } = Astro.props;
 
 const images = Object.entries(
-	import.meta.glob<{ default: ImageMetadata }>(
-		"/src/assets/albums/*/*.(png|jpg)",
-		{
-			eager: true,
-		},
-	),
+  import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/albums/*/*.{png,jpg}",
+    {
+      eager: true,
+    },
+  ),
 ).filter(
-	([imgPath, _image]) => imgPath.includes(album) && !imgPath.includes("1.png"),
+  ([imgPath, _image]) => imgPath.includes(album) && !imgPath.includes("1.png"),
 );
 ---
 
 <Page class="grid grid-cols-3 md:grid-cols-6 gap-4">
-	{images.map(([imgPath, image]) => (
+  {
+    images.map(([imgPath, image]) => (
       <Image
         data-preview="max-w-full max-h-full object-contain"
         data-path={imgPath}
@@ -44,57 +45,58 @@ const images = Object.entries(
         alt=""
         priority
       />
-    ))}
+    ))
+  }
 </Page>
 
 <div
-	id="backdrop"
-	class="fixed inset-0 backdrop-blur-md grid place-items-center hidden"
+  id="backdrop"
+  class="fixed inset-0 backdrop-blur-md grid place-items-center hidden"
 >
-	<Icon
-		id="github-link"
-		class="absolute top-5 right-5 cursor-pointer"
-		title="High Definition"
-		icon="i-material-symbols:arrow-outward-rounded"
-		link="https://github.com/Quintisimo/quintisimo.github.io"
-	/>
-	<div id="image" class="h-[80vh] w-[80vw] flex justify-center"></div>
+  <Icon
+    id="github-link"
+    class="absolute top-5 right-5 cursor-pointer"
+    title="High Definition"
+    icon="i-material-symbols:arrow-outward-rounded"
+    link="https://github.com/Quintisimo/quintisimo.github.io"
+  />
+  <div id="image" class="h-[80vh] w-[80vw] flex justify-center"></div>
 </div>
 
 <script>
-document.addEventListener("astro:page-load", () => {
-	const photos = document.querySelectorAll(".photos");
-	const body = document.querySelector("body");
-	const backdrop = document.querySelector("#backdrop");
-	if (!body || !backdrop) return;
+  document.addEventListener("astro:page-load", () => {
+    const photos = document.querySelectorAll(".photos");
+    const body = document.querySelector("body");
+    const backdrop = document.querySelector("#backdrop");
+    if (!body || !backdrop) return;
 
-	const image = backdrop.querySelector("#image");
-	const ghLink = backdrop.querySelector<HTMLLinkElement>("#github-link");
-	if (!image || !ghLink) return;
+    const image = backdrop.querySelector("#image");
+    const ghLink = backdrop.querySelector<HTMLLinkElement>("#github-link");
+    if (!image || !ghLink) return;
 
-	body.addEventListener("click", () => {
-		backdrop.classList.add("hidden");
-	});
+    body.addEventListener("click", () => {
+      backdrop.classList.add("hidden");
+    });
 
-	ghLink.addEventListener("click", (e) => {
-		e.stopPropagation();
-	});
+    ghLink.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
 
-	for (const photo of photos) {
-		photo.addEventListener("click", (evt) => {
-			evt.stopPropagation();
-			const img = evt.target as HTMLImageElement | null;
-			if (!img) return;
+    for (const photo of photos) {
+      photo.addEventListener("click", (evt) => {
+        evt.stopPropagation();
+        const img = evt.target as HTMLImageElement | null;
+        if (!img) return;
 
-			const cloneImg = img.cloneNode() as HTMLImageElement;
-			cloneImg.removeAttribute("width");
-			cloneImg.removeAttribute("height");
-			cloneImg.classList.add(...(img.dataset.preview ?? "").split(" "));
-			ghLink.href = `https://media.githubusercontent.com/media/Quintisimo/quintisimo.github.io/refs/heads/main${img.dataset.path}`;
+        const cloneImg = img.cloneNode() as HTMLImageElement;
+        cloneImg.removeAttribute("width");
+        cloneImg.removeAttribute("height");
+        cloneImg.classList.add(...(img.dataset.preview ?? "").split(" "));
+        ghLink.href = `https://media.githubusercontent.com/media/Quintisimo/quintisimo.github.io/refs/heads/main${img.dataset.path}`;
 
-			image.replaceChildren(cloneImg);
-			backdrop.classList.remove("hidden");
-		});
-	}
-});
+        image.replaceChildren(cloneImg);
+        backdrop.classList.remove("hidden");
+      });
+    }
+  });
 </script>
