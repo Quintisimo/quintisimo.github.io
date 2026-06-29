@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import Face from "../assets/face.jpg";
 import PageHeading from "../components/page-heading.astro";
-import SectionHeading from "../components/section-heading.astro";
 import { SITE_TITLE } from "../consts";
 import Page from "../layouts/Page.astro";
 ---
@@ -26,7 +25,7 @@ import Page from "../layouts/Page.astro";
 		/>
 	</section>
 	<section>
-		<SectionHeading>About Me</SectionHeading>
+		<h2 class="text-4xl py-4">About Me</h2>
 		<div class="grid gap-2">
 			<p>
 				I'm a software engineer with a passion for building things. I have a
