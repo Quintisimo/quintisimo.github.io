@@ -18,7 +18,7 @@ const images = Object.entries(
 });
 ---
 
-<Page class="grid gap-4 grid-cols-3 md:grid-cols-6 justify-items-center">
+<Page class="grid gap-4 grid-cols-3 md:grid-cols-6">
 	{images.map(({ image, album }) => {
       return (
         <a href={`/photos/${album}`}>
