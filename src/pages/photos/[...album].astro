@@ -21,7 +21,7 @@ const { album } = Astro.props;
 
 const images = Object.entries(
 	import.meta.glob<{ default: ImageMetadata }>(
-		"/src/assets/albums/*/*.(png|jpg)",
+		"/src/assets/albums/*/*.{png,jpg}",
 		{
 			eager: true,
 		},
