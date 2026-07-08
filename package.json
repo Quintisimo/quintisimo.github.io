@@ -9,7 +9,7 @@
     "lint:fix": "biome check --write --unsafe ."
   },
   "dependencies": {
-    "@astrojs/rss": "4.0.18",
+    "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "3.7.3",
     "@iconify-json/jam": "1.2.3",
     "@iconify-json/material-symbols": "1.2.81",
