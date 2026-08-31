@@ -18,8 +18,8 @@ importers:
         specifier: 1.2.3
         version: 1.2.3
       '@iconify-json/material-symbols':
-        specifier: 1.2.89
-        version: 1.2.89
+        specifier: 1.2.90
+        version: 1.2.90
       '@unocss/reset':
         specifier: 66.8.1
         version: 66.8.1
@@ -448,8 +448,8 @@ packages:
   '@iconify-json/jam@1.2.3':
     resolution: {integrity: sha512-Kp+OxTzB8xvbaMyIoqEqB96Ik4zv7uo5y1yavjAee0N1K/6u+PCOBwEi+Djn3WJ2trCrNZk+qYw1BJUsZC41Eg==}
 
-  '@iconify-json/material-symbols@1.2.89':
-    resolution: {integrity: sha512-wYJjKAOptNhc8Bq65PPJVEz/4Ozm+b3ZWEB3H65yGw37dr9AvXibW0GkEdVD7qrCtbD6aC6fY7SLmQCuUGtEAQ==}
+  '@iconify-json/material-symbols@1.2.90':
+    resolution: {integrity: sha512-gCOGFOIhK4QFsmUBsxtp6q7EPghSP11txPFfvb5Dj4nDYZ9qO88xpTQGtIzEQJ4mTPdXfzE9OWR2G4KUif4nXg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -2873,7 +2873,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/material-symbols@1.2.89':
+  '@iconify-json/material-symbols@1.2.90':
     dependencies:
       '@iconify/types': 2.0.0
 
