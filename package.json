@@ -16,7 +16,7 @@
     "@unocss/reset": "66.8.1",
     "@unocss/transformer-directives": "66.8.1",
     "animejs": "4.5.0",
-    "astro": "7.2.4",
+    "astro": "7.2.9",
     "sharp": "0.35.3"
   },
   "devDependencies": {
