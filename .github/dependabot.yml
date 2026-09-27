@@ -10,6 +10,16 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      unocss:
+        applies-to: version-updates
+        patterns:
+          - "unocss"
+          - "@unocss/*"
+        update-types:
+          - major
+          - minor
+          - patch
 
   - package-ecosystem: "github-actions"
     directory: "/"
