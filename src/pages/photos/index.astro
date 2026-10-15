@@ -20,16 +20,16 @@ const images = Object.entries(
 
 <Page class="grid gap-4 grid-cols-3 md:grid-cols-6">
 	{images.map(({ image, album }) => {
-      return (
-        <a href={`/photos/${album}`}>
-          <Image
-            class="border border-black @dark:border-white"
-            src={image.default}
-            alt=""
-            height="200"
-            width="200"
-          />
-        </a>
-      );
-    })}
+		return (
+			<a href={`/photos/${album}`}>
+				<Image
+					class="border border-black @dark:border-white"
+					src={image.default}
+					alt=""
+					height="200"
+					width="200"
+				/>
+			</a>
+		);
+	})}
 </Page>

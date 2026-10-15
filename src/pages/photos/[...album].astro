@@ -33,18 +33,18 @@ const images = Object.entries(
 
 <Page class="grid grid-cols-3 md:grid-cols-6 gap-4">
 	{images.map(([imgPath, image]) => (
-      <Image
-        data-preview="max-w-full max-h-full object-contain"
-        data-path={imgPath}
-        class:list={[
-          "cursor-pointer photos",
-          image.default.height > image.default.width && "row-span-2",
-        ]}
-        src={image.default}
-        alt=""
-        priority
-      />
-    ))}
+		<Image
+			data-preview="max-w-full max-h-full object-contain"
+			data-path={imgPath}
+			class:list={[
+				"cursor-pointer photos",
+				image.default.height > image.default.width && "row-span-2",
+			]}
+			src={image.default}
+			alt=""
+			priority
+		/>
+	))}
 </Page>
 
 <div

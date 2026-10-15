@@ -10,13 +10,13 @@ const { texts } = Astro.props;
 
 <div id="anime" class:list={[headingClasses, "relative", "h-full"]}>
 	{texts.map((text) => (
-      <span
-        id={text}
-        class="absolute inset-0 opacity-0 flex items-center justify-center md:justify-start"
-      >
-        <span>{text}</span>
-      </span>
-    ))}
+		<span
+			id={text}
+			class="absolute inset-0 opacity-0 flex items-center justify-center md:justify-start"
+		>
+			<span>{text}</span>
+		</span>
+	))}
 </div>
 
 <noscript>
