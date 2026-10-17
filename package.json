@@ -13,13 +13,13 @@
     "@astrojs/sitemap": "3.7.4",
     "@iconify-json/jam": "1.2.3",
     "@iconify-json/material-symbols": "1.2.94",
-    "@unocss/astro": "66.10.5",
-    "@unocss/reset": "66.10.5",
-    "@unocss/transformer-directives": "66.10.5",
+    "@unocss/astro": "66.11.0",
+    "@unocss/reset": "66.11.0",
+    "@unocss/transformer-directives": "66.11.0",
     "animejs": "4.5.0",
     "astro": "7.3.6",
     "sharp": "0.35.5",
-    "unocss": "66.10.5"
+    "unocss": "66.11.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
